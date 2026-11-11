@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Olimpo Spa · Masajes relajantes en Laureles, Medellín (propuesta 5.0)</title>
+<meta name="description" content="Spa y masajes relajantes en Laureles, Medellín. Cuerpo completo, piedras volcánicas y aromaterapia. Reserva por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#001E19;--green:#07382F;--gold:#E4C45D;--gold-l:#F3D982;--gold-deep:#876A12;
+  --ivory:#F7F2E7;--sand:#EFE6D0;--sage:#B9CBC3;--muted:#4C5F58;--line:rgba(0,30,25,.14);
+  --disp:"Marcellus",Georgia,serif;--body:"Figtree",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.08;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+main{overflow-x:clip}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.eyebrow{display:block;font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:22px}
+.dark .eyebrow{color:var(--gold)}
+.todo{font-family:var(--body);font-size:.8em;letter-spacing:0;padding:.08em .5em;border:1px dashed currentColor;border-radius:6px;opacity:.75;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:.6em;min-height:54px;padding:0 30px;border-radius:999px;background:var(--gold);color:var(--ink);font-weight:600;text-decoration:none;border:0;cursor:pointer;font-family:inherit;font-size:1rem;transition:background .25s,transform .25s}
+.btn:hover{background:var(--gold-l);transform:translateY(-2px)}
+.link{display:inline-flex;gap:.5em;align-items:center;font-weight:600;text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:3px;transition:gap .25s,color .25s}
+.link:hover{gap:.9em;color:var(--gold-deep)}
+.dark .link:hover{color:var(--gold-l)}
+.dark{color:var(--ivory)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+.draft{background:var(--gold);color:var(--ink);text-align:center;font-size:.8rem;padding:7px 14px;line-height:1.4}
+
+/* Hero */
+.hero{position:relative;min-height:min(100svh,900px);display:flex;flex-direction:column;background:var(--ink);isolation:isolate}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 68%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(100deg,rgba(0,30,25,.9) 0%,rgba(0,30,25,.55) 45%,rgba(0,30,25,.12) 80%),linear-gradient(0deg,rgba(0,30,25,.8),transparent 42%)}
+.nav{display:flex;align-items:center;gap:36px;padding:26px var(--pad)}
+.nav .logo img{height:64px}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;font-size:.95rem;opacity:.88;transition:opacity .2s,color .2s}
+.nav ul a:hover{opacity:1;color:var(--gold-l)}
+.nav .btn{min-height:44px;padding:0 22px;font-size:.92rem}
+.menu-btn{display:none;width:46px;height:46px;border:1px solid rgba(247,242,231,.4);border-radius:50%;background:none;cursor:pointer;position:relative}
+.menu-btn::before,.menu-btn::after{content:"";position:absolute;left:13px;right:13px;height:1.5px;background:var(--ivory)}
+.menu-btn::before{top:18px}.menu-btn::after{top:26px}
+.mobile-menu{display:none;flex-direction:column;gap:4px;background:var(--ink);padding:8px var(--pad) 26px}
+.mobile-menu a{color:var(--ivory);text-decoration:none;font-family:var(--disp);font-size:1.5rem;padding:10px 0;border-bottom:1px solid rgba(247,242,231,.12)}
+.mobile-menu.open{display:flex}
+.hero-in{margin-top:auto;padding:60px var(--pad) clamp(56px,9vh,110px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
+.hero h1{font-size:clamp(2.9rem,8.2vw,7.4rem);line-height:.98;max-width:9.5em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .sub{max-width:31em;margin:28px 0 36px;font-size:1.14rem;color:rgba(247,242,231,.86)}
+.acts{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center}
+.facts{list-style:none;margin:0;padding:0;text-align:right;font-size:.95rem;color:rgba(247,242,231,.8)}
+.facts li{padding:14px 0;border-top:1px solid rgba(247,242,231,.25)}
+.facts li:last-child{border-bottom:1px solid rgba(247,242,231,.25)}
+.facts b{display:block;font:400 1.7rem/1.1 var(--disp);color:var(--ivory)}
+
+/* Nosotros */
+.about{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,7vw,110px);padding-bottom:clamp(90px,13vw,180px)}
+.about .arch{margin-top:-90px;position:relative;z-index:2}
+.about .arch img{width:100%;aspect-ratio:3/4.1;object-fit:cover;border-radius:999px 999px 14px 14px;box-shadow:0 0 0 10px var(--ivory)}
+.about .arch figcaption,.cap{font-size:.8rem;color:var(--muted);margin-top:12px}
+.about .say{padding-top:clamp(70px,10vw,150px)}
+.about h2{font-size:clamp(2rem,4.3vw,3.7rem);max-width:13em}
+.about .txt{max-width:33em;margin:30px 0 0;color:var(--muted);font-size:1.12rem}
+.nums{display:flex;gap:clamp(28px,5vw,72px);margin-top:clamp(44px,6vw,80px);flex-wrap:wrap}
+.nums div{font-size:.92rem;color:var(--muted);max-width:11em}
+.nums b{display:block;font:400 clamp(2.6rem,5vw,4.2rem)/1 var(--disp);color:var(--ink);margin-bottom:10px}
+.about .side{display:flex;gap:26px;align-items:flex-end;margin-top:clamp(44px,6vw,80px)}
+.about .side img{width:min(230px,42%);aspect-ratio:4/5;object-fit:cover;border-radius:14px}
+.about .side ul{list-style:none;margin:0;padding:0;font-size:.98rem}
+.about .side li{padding:9px 0;border-bottom:1px solid var(--line)}
+
+/* Masajes */
+.menu{background:var(--ink);border-radius:clamp(40px,9vw,140px) 0 0 0;padding:clamp(80px,11vw,150px) 0 clamp(90px,12vw,170px)}
+.menu-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(36px,7vw,110px);align-items:start}
+.stage{position:sticky;top:40px;aspect-ratio:4/5;border-radius:18px 18px 18px 160px;overflow:hidden;background:var(--green)}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .7s ease,transform 1.4s ease}
+.stage img.on{opacity:1;transform:none}
+.menu h2{font-size:clamp(2.2rem,4.8vw,4.2rem);max-width:11em}
+.menu .lead{color:var(--sage);max-width:30em;margin:24px 0 clamp(36px,5vw,64px)}
+.list{list-style:none;margin:0;padding:0}
+.list li{border-top:1px solid rgba(247,242,231,.16)}
+.list li:last-child{border-bottom:1px solid rgba(247,242,231,.16)}
+.list a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px 24px;align-items:baseline;padding:34px 0;text-decoration:none;transition:padding .35s}
+.list .n{font:400 .9rem var(--body);color:var(--gold);letter-spacing:.1em}
+.list h3{font-size:clamp(1.7rem,3.2vw,2.7rem);transition:color .3s}
+.list .go{font-size:1.5rem;color:var(--gold);transition:transform .35s}
+.list p{grid-column:2;color:var(--sage);max-width:27em}
+.list .meta{grid-column:2;font-size:.92rem;color:var(--ivory);margin-top:6px}
+.list a:hover{padding-left:14px}
+.list a:hover h3,.list a.on h3{color:var(--gold-l)}
+.list a:hover .go{transform:translateX(8px)}
+.list .ph{display:none}
+.menu .after{margin-top:38px;display:flex;gap:14px 32px;flex-wrap:wrap;align-items:center;color:var(--sage);font-size:.95rem}
+
+/* Cómo funciona */
+.how{padding:clamp(90px,12vw,170px) 0 clamp(70px,9vw,120px)}
+.how h2{font-size:clamp(2rem,4.3vw,3.7rem);max-width:12em}
+.steps{list-style:none;margin:clamp(48px,7vw,90px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);counter-reset:s;border-top:1px solid var(--line)}
+.steps li{counter-increment:s;padding:26px 30px 0 0;position:relative}
+.steps li::before{content:"0" counter(s);display:block;font:400 clamp(2.6rem,5vw,4.2rem)/1 var(--disp);color:var(--gold-deep);margin-bottom:16px}
+.steps li::after{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--gold-deep)}
+.steps b{display:block;font-weight:600;font-size:1.1rem;margin-bottom:4px}
+.steps span{color:var(--muted);font-size:.98rem}
+.wide{display:grid;grid-template-columns:7fr 4fr;gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(70px,9vw,130px);padding-left:var(--pad)}
+.wide img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px 120px 14px 14px;grid-column:1}
+.need{padding-right:var(--pad);padding-bottom:10px}
+.need h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:18px}
+.need a{display:flex;justify-content:space-between;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line);font-size:1.08rem;transition:padding .3s,color .3s}
+.need a:hover{padding-left:10px;color:var(--gold-deep)}
+.wide{grid-template-columns:4fr 7fr;padding:0 0 0 var(--pad)}
+.wide .need{grid-column:1;grid-row:1;padding-right:0}
+.wide img{grid-column:2;grid-row:1;border-radius:120px 0 0 14px}
+
+/* Terapeutas */
+.team-sec{padding:clamp(60px,8vw,110px) 0 clamp(90px,12vw,160px)}
+.team-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
+.team-head h2{font-size:clamp(2rem,4.3vw,3.7rem);max-width:10em}
+.team-head p{max-width:24em;color:var(--muted)}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,2vw,28px);align-items:start}
+.ther:nth-child(even){margin-top:64px}
+.ther:nth-child(3){margin-top:22px}
+.ther a{text-decoration:none;display:block}
+.ther .im{overflow:hidden;border-radius:14px;background:var(--sand)}
+.ther:nth-child(odd) .im{border-radius:999px 999px 14px 14px}
+.ther img{width:100%;aspect-ratio:3/4.3;object-fit:cover;object-position:50% 12%;transition:transform .9s ease}
+.ther:nth-child(even) img{aspect-ratio:3/3.7}
+.ther a:hover img{transform:scale(1.045)}
+.ther h3{font-size:1.65rem;margin:18px 0 4px}
+.ther p{font-size:.88rem;color:var(--muted)}
+.ther .r{display:inline-block;margin-top:10px;font-size:.92rem;font-weight:600;border-bottom:1px solid var(--line);padding-bottom:2px;transition:border-color .3s,color .3s}
+.ther a:hover .r{color:var(--gold-deep);border-color:var(--gold-deep)}
+
+/* Paquetes */
+.packs{background:var(--sand);border-radius:0 clamp(40px,9vw,140px) 0 0;padding:clamp(80px,10vw,140px) 0}
+.packs-grid{display:grid;grid-template-columns:4fr 7fr;gap:clamp(36px,7vw,110px)}
+.packs h2{font-size:clamp(2rem,4vw,3.3rem)}
+.packs .lead{color:var(--muted);margin:22px 0 30px;max-width:24em}
+.toggle{display:flex;gap:26px}
+.toggle button{background:none;border:0;padding:0 0 6px;font:500 1rem var(--body);color:var(--muted);cursor:pointer;border-bottom:2px solid transparent}
+.toggle button[aria-pressed=true]{color:var(--ink);border-color:var(--gold-deep)}
+.plan{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 30px;padding:30px 0;border-top:1px solid var(--line);align-items:baseline}
+.plan:last-of-type{border-bottom:1px solid var(--line)}
+.plan h3{font-size:clamp(1.6rem,2.8vw,2.3rem)}
+.plan h3 small{font:600 .72rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-left:12px;vertical-align:middle}
+.plan .amount{font:400 1.7rem var(--disp);text-align:right}
+.plan p{color:var(--muted);font-size:.96rem}
+.plan .link{justify-self:end;font-size:.92rem}
+.dots{display:flex;gap:6px;align-items:center;margin-top:8px;font-size:.84rem;color:var(--muted)}
+.dots i{width:11px;height:11px;border-radius:50%;background:var(--ink)}
+.dots i.free{background:none;border:1.5px solid var(--gold-deep)}
+.dots span{margin-left:8px}
+.packs .note{font-size:.86rem;color:var(--muted);margin-top:22px}
+
+/* Reseñas */
+.voices{padding:clamp(90px,12vw,170px) 0;display:grid;grid-template-columns:7fr 4fr;gap:clamp(36px,7vw,110px);align-items:end}
+.voices blockquote{margin:0;font:400 clamp(1.7rem,3.6vw,3rem)/1.2 var(--disp);position:relative;padding-top:70px}
+.voices blockquote::before{content:"“";position:absolute;top:-10px;left:-6px;font-size:7rem;line-height:1;color:var(--gold)}
+.voices cite{display:block;font:400 .95rem var(--body);color:var(--muted);margin-top:26px;font-style:normal}
+.voices .more q{display:block;quotes:none;color:var(--muted);padding:20px 0;border-top:1px solid var(--line);font-size:.98rem}
+.voices .more q small{display:block;margin-top:6px;color:var(--ink)}
+.voices .rate{font:400 3.4rem/1 var(--disp);margin-bottom:8px}
+.voices .rate+p{font-size:.92rem;color:var(--muted);margin-bottom:26px}
+.stars{color:var(--gold-deep);letter-spacing:.14em}
+
+/* Reservar */
+.book{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,90px);align-items:start;padding-bottom:clamp(90px,12vw,160px)}
+.book .info h2{font-size:clamp(2.2rem,4.8vw,4.2rem)}
+.book .info>p{color:var(--muted);margin:24px 0 36px;max-width:26em}
+.book .ph{display:grid;grid-template-columns:minmax(0,170px) 1fr;gap:28px;align-items:end}
+.book .ph img{aspect-ratio:3/4;object-fit:cover;border-radius:999px 999px 12px 12px;width:100%}
+.book dl{margin:0;font-size:.98rem}
+.book dt{font-size:.74rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:16px}
+.book dd{margin:2px 0 0}
+.book dd a{text-decoration:none;border-bottom:1px solid var(--line)}
+form{background:var(--ink);color:var(--ivory);border-radius:28px 28px 28px 110px;padding:clamp(28px,4.5vw,56px);padding-bottom:clamp(40px,6vw,72px);display:grid;grid-template-columns:1fr 1fr;gap:22px 26px;margin-top:10px}
+form h3{grid-column:1/-1;font-size:1.7rem;margin-bottom:4px}
+label{font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);display:grid;gap:6px}
+label.w,form .btn,form .fine{grid-column:1/-1}
+input,select,textarea{font:400 1.02rem var(--body);color:var(--ivory);background:transparent;border:0;border-bottom:1px solid rgba(247,242,231,.3);padding:10px 0;width:100%;border-radius:0;letter-spacing:0;text-transform:none;color-scheme:dark}
+select option{color:#111}
+textarea{min-height:74px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--gold)}
+::placeholder{color:rgba(185,203,195,.6)}
+form .btn{justify-self:start;margin-top:8px}
+form .fine{font-size:.82rem;color:var(--sage)}
+
+/* Preguntas */
+.faq{display:grid;grid-template-columns:4fr 7fr;gap:clamp(36px,7vw,110px);padding-bottom:clamp(90px,12vw,170px);align-items:start}
+.faq .l{position:sticky;top:40px}
+.faq h2{font-size:clamp(2rem,4vw,3.3rem)}
+.faq .l p{color:var(--muted);margin:22px 0 24px;max-width:22em}
+.faq .l .acts{gap:12px 28px}
+.tabs{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{background:none;border:0;padding:0 0 6px;font:500 .98rem var(--body);color:var(--muted);cursor:pointer;border-bottom:2px solid transparent}
+.tabs button[aria-pressed=true]{color:var(--ink);border-color:var(--gold-deep)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:26px 44px 26px 0;position:relative;font:400 clamp(1.25rem,2vw,1.6rem)/1.25 var(--disp);transition:color .25s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--gold-deep)}
+summary::after{content:"+";position:absolute;right:4px;top:50%;transform:translateY(-50%);font:400 1.6rem var(--body);color:var(--gold-deep);transition:transform .3s}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
+
+/* Cierre */
+.end{position:relative;background:var(--ink);isolation:isolate}
+.end .pic{position:absolute;inset:0 0 auto 0;height:min(78vh,720px);z-index:-1}
+.end .pic img{width:100%;height:100%;object-fit:cover}
+.end .pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,30,25,.35),rgba(0,30,25,.55) 55%,var(--ink) 100%)}
+.cta{padding:clamp(120px,20vh,220px) 0 clamp(90px,14vh,150px)}
+.cta h2{font-size:clamp(2.6rem,7vw,6rem);max-width:9em}
+.cta p{margin:24px 0 36px;max-width:27em;color:rgba(247,242,231,.86);font-size:1.12rem}
+.foot{display:grid;grid-template-columns:5fr 2fr 2fr 3fr;gap:40px;padding:50px 0 44px;border-top:1px solid rgba(247,242,231,.16);font-size:.95rem;color:var(--sage)}
+.foot .logo img{height:84px;margin-bottom:18px}
+.foot h4{font:600 .74rem var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin:0 0 14px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.foot a{text-decoration:none;transition:color .2s}
+.foot a:hover{color:var(--gold-l)}
+.foot-base{display:flex;justify-content:space-between;gap:14px 30px;flex-wrap:wrap;font-size:.8rem;color:rgba(185,203,195,.7);padding-bottom:34px}
+.mbar{display:none}
+
+@media (max-width:980px){
+  .nav ul,.nav>.btn{display:none}
+  .menu-btn{display:block;margin-left:auto}
+  .hero-in{grid-template-columns:1fr}
+  .facts{display:flex;gap:24px;text-align:left;border-top:1px solid rgba(247,242,231,.25);padding-top:16px}
+  .facts li,.facts li:last-child{border:0;padding:0;font-size:.82rem;flex:1}
+  .facts b{font-size:1.3rem}
+  .about,.menu-grid,.packs-grid,.voices,.book,.faq{grid-template-columns:1fr}
+  .about .arch{max-width:340px;margin-top:-70px}
+  .about .say{padding-top:0}
+  .stage{display:none}
+  .list .ph{display:block;grid-column:1/-1;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px 14px 14px 70px;margin-bottom:20px}
+  .list li:nth-child(even) .ph{border-radius:14px 14px 70px 14px;width:86%;margin-left:auto}
+  .list p,.list .meta{grid-column:1/-1}
+  .list a{grid-template-columns:auto minmax(0,1fr) auto}
+  .steps{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--line);margin-left:5px}
+  .steps li{padding:0 0 34px 28px}
+  .steps li::after{top:14px;left:-5px}
+  .wide{grid-template-columns:1fr;padding:0 0 0 var(--pad)}
+  .wide img{grid-column:1;grid-row:1;border-radius:70px 0 0 14px;aspect-ratio:4/3}
+  .wide .need{grid-row:2;padding-right:var(--pad)}
+  .team{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1*var(--pad));padding:0 var(--pad) 12px;scrollbar-width:none}
+  .team::-webkit-scrollbar{display:none}
+  .ther{flex:0 0 62%;max-width:270px;scroll-snap-align:center}
+  .ther:nth-child(even){margin-top:34px}
+  .faq .l{position:static}
+  .foot{grid-template-columns:1fr 1fr}
+  .foot>div:first-child{grid-column:1/-1}
+  .book .info{order:0}
+  body{padding-bottom:64px}
+  .mbar{display:grid;grid-template-columns:1.3fr 1fr 1fr;position:fixed;left:10px;right:10px;bottom:10px;z-index:50;background:var(--ink);border-radius:999px;padding:5px;box-shadow:0 10px 30px rgba(0,30,25,.35)}
+  .mbar a{color:var(--ivory);text-decoration:none;text-align:center;font-size:.88rem;font-weight:600;padding:12px 4px;border-radius:999px}
+  .mbar a:first-child{background:var(--gold);color:var(--ink)}
+}
+@media (max-width:560px){
+  form{grid-template-columns:1fr;border-radius:24px 24px 24px 70px}
+  .plan{grid-template-columns:1fr}
+  .plan .amount,.plan .link{text-align:left;justify-self:start}
+  .nums{gap:26px}
+  .nav .logo img{height:54px}
+  .hero>img{object-position:58% 60%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="draft">Maqueta de propuesta · versión 5.0 · precios, horario y reseñas por completar · <a href="../v4/">Ver versión 4.0</a> · <a href="../">Versión 3.0</a> · <a href="../propuesta.html">Documento</a></div>
+
+<section class="hero dark" id="top">
+  <img src="https://images.unsplash.com/photo-1611920630418-f587fdc3bf94?w=2000&q=80&auto=format&fit=crop" alt="Cabina de masajes con luz cálida y camilla preparada">
+  <header class="nav">
+    <a class="logo" href="#top" aria-label="Olimpo Spa, inicio"><img src="../logo-olimpo.png" alt="Olimpo"></a>
+    <ul>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#masajes">Masajes</a></li>
+      <li><a href="#terapeutas">Terapeutas</a></li>
+      <li><a href="#paquetes">Paquetes</a></li>
+      <li><a href="#preguntas">Preguntas</a></li>
+    </ul>
+    <a class="btn" href="#reservar">Reservar</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú"></button>
+  </header>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menú principal">
+    <a href="#nosotros">Nosotros</a><a href="#masajes">Masajes y precios</a><a href="#terapeutas">Terapeutas</a><a href="#paquetes">Paquetes</a><a href="#preguntas">Preguntas</a><a href="#reservar">Reservar</a>
+  </nav>
+  <div class="hero-in">
+    <div>
+      <span class="eyebrow">Spa y masajes · Laureles, Medellín</span>
+      <h1>Relájate. Respira. <em>Vuelve a ti.</em></h1>
+      <p class="sub">Masajes de cuerpo completo, piedras volcánicas y aromaterapia con terapeutas profesionales, a pocos minutos del Estadio.</p>
+      <div class="acts">
+        <a class="btn" href="#reservar">Reserva tu sesión</a>
+        <a class="link" href="#masajes">Ver masajes y precios <span>→</span></a>
+      </div>
+    </div>
+    <ul class="facts">
+      <li><b>+3.500</b>clientes en Medellín</li>
+      <li><b>5</b>terapeutas profesionales</li>
+      <li><b>Bebida</b>de bienvenida incluida</li>
+    </ul>
+  </div>
+</section>
+
+<main>
+<section class="wrap about" id="nosotros">
+  <figure class="arch" style="margin-left:0;margin-right:0;margin-bottom:0">
+    <img src="https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?w=1000&q=80&auto=format&fit=crop" alt="Manos de una terapeuta trabajando la espalda con aceite">
+    <figcaption>Técnica de deslizamiento, presión a tu medida.</figcaption>
+  </figure>
+  <div class="say">
+    <span class="eyebrow">Nosotros</span>
+    <h2>Un spa en Laureles hecho para desconectar de verdad.</h2>
+    <p class="txt">En Olimpo combinamos terapeutas profesionales, técnicas de relajación y un ambiente cálido y tranquilo. Llegas, respiras y nosotros nos encargamos del resto.</p>
+    <div class="nums">
+      <div><b>+3.500</b>personas ya vivieron la experiencia Olimpo</div>
+      <div><b>5</b>terapeutas para que elijas con quién reservar</div>
+      <div><b>4,_</b>en Google <span class="todo">por conectar</span></div>
+    </div>
+    <div class="side">
+      <img src="https://images.unsplash.com/photo-1636714528228-f469eefb3eef?w=600&q=80&auto=format&fit=crop" alt="Velas aromáticas recién apagadas con difusor de varillas">
+      <ul>
+        <li>Atención personalizada</li>
+        <li>Reserva fácil por WhatsApp</li>
+        <li>Bebida de bienvenida en cada sesión</li>
+        <li><a class="link" href="#como" style="border:0">Cómo funciona <span>→</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="menu dark" id="masajes">
+  <div class="wrap menu-grid">
+    <div class="stage" id="stage" aria-hidden="true">
+      <img class="on" src="https://images.unsplash.com/photo-1745327883508-b6cd32e5dde5?w=1100&q=80&auto=format&fit=crop" alt="">
+      <img src="https://images.unsplash.com/photo-1696841212541-449ca29397cc?w=1100&q=80&auto=format&fit=crop" alt="">
+      <img src="https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=1100&q=80&auto=format&fit=crop" alt="">
+    </div>
+    <div>
+      <span class="eyebrow">Nuestros masajes</span>
+      <h2>Pensados para lo que tu cuerpo necesita hoy.</h2>
+      <p class="lead">Elige el tuyo y reserva en un toque. WhatsApp se abre con el masaje ya escrito.</p>
+      <ul class="list" id="list">
+        <li><a class="on" data-i="0" href="https://wa.me/573012295396?text=Hola%2C%20quiero%20reservar%20un%20masaje%20relajante" target="_blank" rel="noopener">
+          <img class="ph" src="https://images.unsplash.com/photo-1745327883508-b6cd32e5dde5?w=900&h=560&q=80&auto=format&fit=crop" alt="Masaje relajante en la espalda">
+          <span class="n">01</span><h3>Masaje relajante</h3><span class="go" aria-hidden="true">→</span>
+          <p>Cuerpo completo con técnica de deslizamiento para soltar la tensión.</p>
+          <span class="meta"><span class="todo">__ min</span> · desde <span class="todo">$___</span></span></a></li>
+        <li><a data-i="1" href="https://wa.me/573012295396?text=Hola%2C%20quiero%20reservar%20un%20masaje%20con%20piedras%20volc%C3%A1nicas" target="_blank" rel="noopener">
+          <img class="ph" src="https://images.unsplash.com/photo-1696841212541-449ca29397cc?w=900&h=560&q=80&auto=format&fit=crop" alt="Piedras volcánicas tibias sobre la espalda">
+          <span class="n">02</span><h3>Piedras volcánicas</h3><span class="go" aria-hidden="true">→</span>
+          <p>Piedras tibias que relajan el músculo en profundidad, con exfoliación corporal.</p>
+          <span class="meta"><span class="todo">__ min</span> · desde <span class="todo">$___</span></span></a></li>
+        <li><a data-i="2" href="https://wa.me/573012295396?text=Hola%2C%20quiero%20reservar%20un%20masaje%20de%20aromaterapia" target="_blank" rel="noopener">
+          <img class="ph" src="https://images.unsplash.com/photo-1573461160327-b450ce3d8e7f?w=900&h=560&q=80&auto=format&fit=crop" alt="Gota de aceite aromático sobre la piel">
+          <span class="n">03</span><h3>Aromaterapia</h3><span class="go" aria-hidden="true">→</span>
+          <p>Aceite tibio de una vela aromática que se derrite sobre la piel.</p>
+          <span class="meta"><span class="todo">__ min</span> · desde <span class="todo">$___</span></span></a></li>
+      </ul>
+      <p class="after"><a class="link" href="#reservar">Ver la carta completa <span>→</span></a> Todas las sesiones incluyen bebida de bienvenida.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="como">
+  <div class="wrap">
+    <span class="eyebrow">Cómo funciona</span>
+    <h2>Del primer mensaje a la camilla en tres pasos.</h2>
+    <ol class="steps">
+      <li><b>Elige tu masaje</b><span>Mira duración y precio en la carta.</span></li>
+      <li><b>Escríbenos por WhatsApp</b><span>Te confirmamos la hora y la terapeuta.</span></li>
+      <li><b>Llega a Laureles</b><span>Te esperamos con una bebida de bienvenida.</span></li>
+    </ol>
+  </div>
+  <div class="wide">
+    <div class="need">
+      <h3>¿Qué necesitas hoy?</h3>
+      <a href="https://wa.me/573012295396?text=Hola%2C%20quiero%20un%20masaje%20para%20relajarme" target="_blank" rel="noopener">Relajarme <span>→</span></a>
+      <a href="https://wa.me/573012295396?text=Hola%2C%20quiero%20un%20masaje%20para%20soltar%20tensi%C3%B3n%20en%20la%20espalda" target="_blank" rel="noopener">Soltar la espalda <span>→</span></a>
+      <a href="https://wa.me/573012295396?text=Hola%2C%20quiero%20que%20me%20recomienden%20un%20masaje" target="_blank" rel="noopener">Que me recomienden <span>→</span></a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1601479604588-68d9e6d386b5?w=1600&q=80&auto=format&fit=crop" alt="Velas encendidas con luz cálida">
+  </div>
+</section>
+
+<section class="wrap team-sec" id="terapeutas">
+  <div class="team-head">
+    <div><span class="eyebrow">Nuestro equipo</span><h2>Conoce a nuestras terapeutas.</h2></div>
+    <p>Profesionales dedicadas a tu bienestar. Si te gusta cómo trabaja una, reserva siempre con ella.</p>
+  </div>
+  <div class="team" id="team"></div>
+</section>
+
+<section class="packs" id="paquetes">
+  <div class="wrap packs-grid">
+    <div>
+      <span class="eyebrow">Paquetes · idea para evaluar</span>
+      <h2>Más visitas, mejor precio.</h2>
+      <p class="lead">Propuesta de paquetes prepagados para que los clientes vuelvan. Los valores los define el spa.</p>
+      <div class="toggle" role="group" aria-label="Duración"><button type="button" aria-pressed="true" data-min="60">60 minutos</button><button type="button" aria-pressed="false" data-min="90">90 minutos</button></div>
+    </div>
+    <div>
+      <div class="plan"><h3>Una sesión</h3><span class="amount"><span class="todo">$___</span></span>
+        <p>Cualquier masaje de <span class="mins">60</span> min, pagas al venir.</p><a class="link" href="#reservar">Reservar <span>→</span></a></div>
+      <div class="plan"><h3>Paquete de 5</h3><span class="amount"><span class="todo">$___</span></span>
+        <div><p>Masajes de <span class="mins">60</span> min. Vigencia <span class="todo">por definir</span>. Se puede regalar.</p><div class="dots"><i></i><i></i><i></i><i></i><i class="free"></i><span>4 pagas + 1 de cortesía (ejemplo)</span></div></div>
+        <a class="link" href="https://wa.me/573012295396?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20paquete%20de%205%20sesiones" target="_blank" rel="noopener">Quiero este <span>→</span></a></div>
+      <div class="plan"><h3>Paquete de 10 <small>Mejor precio</small></h3><span class="amount"><span class="todo">$___</span></span>
+        <div><p>Masajes de <span class="mins">60</span> min. Vigencia <span class="todo">por definir</span>. Elige siempre tu terapeuta.</p><div class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="free"></i><i class="free"></i><i class="free"></i><span>7 pagas + 3 de cortesía (ejemplo)</span></div></div>
+        <a class="link" href="https://wa.me/573012295396?text=Hola%2C%20quiero%20informaci%C3%B3n%20del%20paquete%20de%2010%20sesiones" target="_blank" rel="noopener">Quiero este <span>→</span></a></div>
+      <p class="note">Sin renovación automática. Esta sección es una sugerencia: se publica solo si el spa decide ofrecer paquetes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap voices" id="resenas">
+  <div>
+    <span class="eyebrow">Reseñas</span>
+    <blockquote>Aquí va la mejor reseña real de Google, con el texto tal como lo escribió el cliente.
+      <cite>Nombre del cliente · Masaje relajante <span class="todo">reseña real</span></cite></blockquote>
+  </div>
+  <div class="more">
+    <p class="rate">4,_</p>
+    <p><span class="stars">★★★★★</span> <span class="todo">___ reseñas en Google</span></p>
+    <q>Segunda reseña real, idealmente una que mencione el servicio.<small>Nombre · Piedras volcánicas</small></q>
+    <q>Tercera reseña real, idealmente una que mencione a una terapeuta.<small>Nombre · Aromaterapia</small></q>
+  </div>
+</section>
+
+<section class="wrap book" id="reservar">
+  <div class="info">
+    <span class="eyebrow">Reserva tu cita</span>
+    <h2>Empieza hoy tu momento de bienestar.</h2>
+    <p>Elige masaje y fecha. Al enviar se abre WhatsApp con tu solicitud lista y te confirmamos la cita.</p>
+    <div class="ph">
+      <img src="https://images.unsplash.com/photo-1706795033849-7ca391f007c5?w=500&q=80&auto=format&fit=crop" alt="Toallas enrolladas, vela y miel sobre una bandeja">
+      <dl>
+        <dt>Dirección</dt><dd>Carrera 77B #48B-41, Laureles, Medellín<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn" target="_blank" rel="noopener">Abrir en Maps →</a></dd>
+        <dt>Teléfono</dt><dd><a href="tel:+573012295396">+57 301 229 5396</a></dd>
+        <dt>Horario</dt><dd><span class="todo">por confirmar</span></dd>
+      </dl>
+    </div>
+  </div>
+  <form id="bookForm" novalidate>
+    <h3>Tu reserva</h3>
+    <label>Nombre<input id="f-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required></label>
+    <label>Fecha preferida<input id="f-fecha" name="fecha" type="date"></label>
+    <label>Masaje<select id="f-masaje" name="masaje"><option>Masaje relajante</option><option>Piedras volcánicas</option><option>Aromaterapia</option><option>Quiero que me recomienden</option></select></label>
+    <label>Terapeuta<select id="f-terapeuta" name="terapeuta"><option>Sin preferencia</option><option>Hera</option><option>Artemisa</option><option>Afrodita</option><option>Isis</option><option>Medusa</option></select></label>
+    <label class="w">Notas (opcional)<textarea id="f-notas" name="notas" placeholder="Hora que prefieres, zonas con tensión, alergias…"></textarea></label>
+    <button class="btn" type="submit">Enviar por WhatsApp</button>
+    <p class="fine">No guardamos tus datos: el mensaje se envía desde tu propio WhatsApp.</p>
+  </form>
+</section>
+
+<section class="wrap faq" id="preguntas">
+  <div class="l">
+    <span class="eyebrow">Preguntas</span>
+    <h2>¿Dudas antes de tu primera visita?</h2>
+    <p>Si no encuentras la respuesta, escríbenos o llámanos y te respondemos en el horario de atención.</p>
+    <div class="acts"><a class="link" href="https://wa.me/573012295396?text=Hola%2C%20tengo%20una%20pregunta" target="_blank" rel="noopener">Escribir por WhatsApp <span>→</span></a><a class="link" href="tel:+573012295396">Llamar <span>→</span></a></div>
+  </div>
+  <div>
+    <div class="tabs" role="group" aria-label="Filtrar preguntas"><button type="button" aria-pressed="true" data-cat="all">Todas</button><button type="button" aria-pressed="false" data-cat="reservas">Reservas</button><button type="button" aria-pressed="false" data-cat="masajes">Masajes</button><button type="button" aria-pressed="false" data-cat="pagos">Pagos</button></div>
+    <details data-cat="reservas"><summary>¿Con cuánta anticipación debo reservar?</summary><p>Respuesta por confirmar con el spa. Todos los servicios se reservan con anticipación o visitando el lugar.</p></details>
+    <details data-cat="reservas"><summary>¿Puedo pedir siempre a la misma terapeuta?</summary><p>Sí. Elígela en el formulario o dinos su nombre por WhatsApp y revisamos su disponibilidad.</p></details>
+    <details data-cat="masajes"><summary>¿Qué incluye cada sesión?</summary><p>Todas las sesiones incluyen bebida de bienvenida. Cada masaje detalla en la carta lo que incluye.</p></details>
+    <details data-cat="masajes"><summary>¿Cuál masaje me conviene?</summary><p>Cuéntanos cómo te sientes y te recomendamos uno. Respuesta por ajustar con el spa.</p></details>
+    <details data-cat="pagos"><summary>¿Qué formas de pago reciben?</summary><p>Respuesta por confirmar con el spa.</p></details>
+    <details data-cat="pagos"><summary>¿Hay parqueadero cerca?</summary><p>Respuesta por confirmar con el spa.</p></details>
+  </div>
+</section>
+</main>
+
+<div class="end dark">
+  <div class="pic"><img src="https://images.unsplash.com/photo-1598901986949-f593ff2a31a6?w=2000&q=80&auto=format&fit=crop" alt="Persona recibiendo un masaje facial con luz tenue"></div>
+  <div class="wrap">
+    <div class="cta">
+      <h2>¿Listo para sentirte mejor?</h2>
+      <p>Reserva hoy tu sesión. La bebida de bienvenida va por nuestra cuenta.</p>
+      <div class="acts"><a class="btn" href="#reservar">Reserva tu sesión</a><a class="link" href="tel:+573012295396">Llamar al 301 229 5396 <span>→</span></a></div>
+    </div>
+    <footer class="foot">
+      <div><a class="logo" href="#top"><img src="../logo-olimpo.png" alt="Olimpo"></a><p>Spa y masajes relajantes en Laureles, Medellín.<br>Reservas con anticipación o en el lugar.</p></div>
+      <div><h4>Enlaces</h4><ul><li><a href="#nosotros">Nosotros</a></li><li><a href="#masajes">Masajes</a></li><li><a href="#terapeutas">Terapeutas</a></li><li><a href="#paquetes">Paquetes</a></li><li><a href="#preguntas">Preguntas</a></li></ul></div>
+      <div><h4>Masajes</h4><ul><li><a href="#masajes">Relajante</a></li><li><a href="#masajes">Piedras volcánicas</a></li><li><a href="#masajes">Aromaterapia</a></li></ul></div>
+      <div><h4>Contacto</h4><ul><li>Carrera 77B #48B-41, Laureles</li><li><a href="https://wa.me/573012295396" target="_blank" rel="noopener">+57 301 229 5396</a></li><li>Horario <span class="todo">por confirmar</span></li><li><a href="https://www.instagram.com/olimpospamassage" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@olimpospa_" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+    </footer>
+    <div class="foot-base"><span>© 2026 Olimpo Spa Medellín · Privacidad · Términos</span><span>Fotos de ambiente: imágenes de referencia de Unsplash, se reemplazan por fotos propias del spa.</span></div>
+  </div>
+</div>
+
+<nav class="mbar" aria-label="Acciones rápidas">
+  <a href="https://wa.me/573012295396?text=Hola%2C%20quiero%20reservar%20un%20masaje%20en%20Olimpo%20Spa" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="tel:+573012295396">Llamar</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn" target="_blank" rel="noopener">Cómo llegar</a>
+</nav>
+
+<script>
+(function(){
+  var WA='https://wa.me/573012295396?text=';
+  // Terapeutas
+  var team=['Hera','Artemisa','Afrodita','Isis','Medusa'];
+  document.getElementById('team').innerHTML=team.map(function(n){
+    return '<article class="ther"><a target="_blank" rel="noopener" href="'+WA+encodeURIComponent('Hola, quiero reservar con '+n)+'">'+
+      '<div class="im"><img src="../v4/img/'+n.toLowerCase()+'.webp" alt="'+n+', terapeuta de Olimpo"></div>'+
+      '<h3>'+n+'</h3><p>Especialidad <span class="todo">por confirmar</span></p><span class="r">Reservar con '+n+' →</span></a></article>';
+  }).join('');
+  // Foto que cambia con el masaje
+  var imgs=document.querySelectorAll('#stage img'),items=document.querySelectorAll('#list a');
+  items.forEach(function(a){
+    var show=function(){items.forEach(function(x){x.classList.toggle('on',x===a)});imgs.forEach(function(im,i){im.classList.toggle('on',i==a.dataset.i)})};
+    a.addEventListener('mouseenter',show);a.addEventListener('focus',show);
+  });
+  // Menú móvil
+  var b=document.getElementById('menuBtn'),m=document.getElementById('mobileMenu');
+  function setOpen(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
+  b.addEventListener('click',function(){setOpen(!m.classList.contains('open'))});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false)});
+  // Paquetes 60/90
+  var tg=document.querySelectorAll('.toggle button');
+  tg.forEach(function(t){t.addEventListener('click',function(){tg.forEach(function(x){x.setAttribute('aria-pressed',x===t)});document.querySelectorAll('.mins').forEach(function(s){s.textContent=t.dataset.min})})});
+  // Filtro de preguntas
+  var tabs=document.querySelectorAll('.tabs button');
+  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t)});document.querySelectorAll('.faq details').forEach(function(d){d.hidden=t.dataset.cat!=='all'&&d.dataset.cat!==t.dataset.cat})})});
+  // Formulario: arma el mensaje y abre WhatsApp
+  document.getElementById('bookForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(id){return document.getElementById(id).value.trim()};
+    var n=document.getElementById('f-nombre');
+    if(!v('f-nombre')){n.focus();n.style.borderColor='#E58B7B';return}
+    var msg='Hola, soy '+v('f-nombre')+'. Quiero reservar: '+v('f-masaje')+'.';
+    if(v('f-fecha'))msg+=' Fecha: '+v('f-fecha').split('-').reverse().join('/')+'.';
+    if(v('f-terapeuta')!=='Sin preferencia')msg+=' Terapeuta: '+v('f-terapeuta')+'.';
+    if(v('f-notas'))msg+=' Notas: '+v('f-notas');
+    window.open(WA+encodeURIComponent(msg),'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
