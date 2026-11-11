@@ -55,7 +55,7 @@ main{overflow-x:clip}
 .mobile-menu{display:none;flex-direction:column;gap:4px;background:var(--ink);padding:8px var(--pad) 26px}
 .mobile-menu a{color:var(--ivory);text-decoration:none;font-family:var(--disp);font-size:1.5rem;padding:10px 0;border-bottom:1px solid rgba(247,242,231,.12)}
 .mobile-menu.open{display:flex}
-.hero-in{margin-top:auto;padding:60px var(--pad) clamp(56px,9vh,110px);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
+.hero-in{margin-top:auto;padding:60px var(--pad) 136px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:40px;align-items:end}
 .hero h1{font-size:clamp(2.9rem,8.2vw,7.4rem);line-height:.98;max-width:9.5em}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero .sub{max-width:31em;margin:28px 0 36px;font-size:1.14rem;color:rgba(247,242,231,.86)}
@@ -73,13 +73,13 @@ main{overflow-x:clip}
 .about .say{padding-top:clamp(70px,10vw,150px)}
 .about h2{font-size:clamp(2rem,4.3vw,3.7rem);max-width:13em}
 .about .txt{max-width:33em;margin:30px 0 0;color:var(--muted);font-size:1.12rem}
-.nums{display:flex;gap:clamp(28px,5vw,72px);margin-top:clamp(44px,6vw,80px);flex-wrap:wrap}
-.nums div{font-size:.92rem;color:var(--muted);max-width:11em}
-.nums b{display:block;font:400 clamp(2.6rem,5vw,4.2rem)/1 var(--disp);color:var(--ink);margin-bottom:10px}
-.about .side{display:flex;gap:26px;align-items:flex-end;margin-top:clamp(44px,6vw,80px)}
-.about .side img{width:min(230px,42%);aspect-ratio:4/5;object-fit:cover;border-radius:14px}
-.about .side ul{list-style:none;margin:0;padding:0;font-size:.98rem}
-.about .side li{padding:9px 0;border-bottom:1px solid var(--line)}
+.nums{display:flex;gap:clamp(24px,3.5vw,56px);margin-top:clamp(44px,6vw,80px)}
+.nums div{font-size:.92rem;color:var(--muted);flex:0 1 11em;min-width:min-content}
+.nums b{display:block;white-space:nowrap;font:400 clamp(2.6rem,5vw,4.2rem)/1 var(--disp);color:var(--ink);margin-bottom:10px}
+.about .arch .sm{width:46%;aspect-ratio:4/5;border-radius:14px;margin:-150px -34px 0 auto;position:relative}
+.about .arch figcaption{max-width:48%;margin-top:-34px}
+.about .side{list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;font-size:1rem;max-width:26em}
+.about .side li{padding:11px 0;border-top:1px solid var(--line)}
 
 /* Masajes */
 .menu{background:var(--ink);border-radius:clamp(40px,9vw,140px) 0 0 0;padding:clamp(80px,11vw,150px) 0 clamp(90px,12vw,170px)}
@@ -113,18 +113,15 @@ main{overflow-x:clip}
 .steps li::after{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--gold-deep)}
 .steps b{display:block;font-weight:600;font-size:1.1rem;margin-bottom:4px}
 .steps span{color:var(--muted);font-size:.98rem}
-.wide{display:grid;grid-template-columns:7fr 4fr;gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(70px,9vw,130px);padding-left:var(--pad)}
-.wide img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px 120px 14px 14px;grid-column:1}
-.need{padding-right:var(--pad);padding-bottom:10px}
+.wide{display:grid;grid-template-columns:4fr 7fr;gap:clamp(28px,5vw,80px);align-items:end;margin-top:clamp(70px,9vw,130px);padding-left:max(var(--pad),calc((100vw - 1280px)/2 + var(--pad)))}
+.wide img{width:100%;aspect-ratio:16/9;object-fit:cover;grid-column:2;grid-row:1;border-radius:120px 0 0 14px}
+.need{grid-column:1;grid-row:1;padding-bottom:10px}
 .need h3{font-size:clamp(1.6rem,2.6vw,2.2rem);margin-bottom:18px}
 .need a{display:flex;justify-content:space-between;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line);font-size:1.08rem;transition:padding .3s,color .3s}
 .need a:hover{padding-left:10px;color:var(--gold-deep)}
-.wide{grid-template-columns:4fr 7fr;padding:0 0 0 var(--pad)}
-.wide .need{grid-column:1;grid-row:1;padding-right:0}
-.wide img{grid-column:2;grid-row:1;border-radius:120px 0 0 14px}
 
 /* Terapeutas */
-.team-sec{padding:clamp(60px,8vw,110px) 0 clamp(90px,12vw,160px)}
+.team-sec{padding-top:clamp(60px,8vw,110px);padding-bottom:clamp(90px,12vw,160px)}
 .team-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:clamp(40px,6vw,70px)}
 .team-head h2{font-size:clamp(2rem,4.3vw,3.7rem);max-width:10em}
 .team-head p{max-width:24em;color:var(--muted)}
@@ -164,7 +161,7 @@ main{overflow-x:clip}
 .packs .note{font-size:.86rem;color:var(--muted);margin-top:22px}
 
 /* Reseñas */
-.voices{padding:clamp(90px,12vw,170px) 0;display:grid;grid-template-columns:7fr 4fr;gap:clamp(36px,7vw,110px);align-items:end}
+.voices{padding-top:clamp(90px,12vw,170px);padding-bottom:clamp(90px,12vw,170px);display:grid;grid-template-columns:7fr 4fr;gap:clamp(36px,7vw,110px);align-items:end}
 .voices blockquote{margin:0;font:400 clamp(1.7rem,3.6vw,3rem)/1.2 var(--disp);position:relative;padding-top:70px}
 .voices blockquote::before{content:"“";position:absolute;top:-10px;left:-6px;font-size:7rem;line-height:1;color:var(--gold)}
 .voices cite{display:block;font:400 .95rem var(--body);color:var(--muted);margin-top:26px;font-style:normal}
@@ -238,7 +235,8 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
   .facts li,.facts li:last-child{border:0;padding:0;font-size:.82rem;flex:1}
   .facts b{font-size:1.3rem}
   .about,.menu-grid,.packs-grid,.voices,.book,.faq{grid-template-columns:1fr}
-  .about .arch{max-width:340px;margin-top:-70px}
+  .about .arch{max-width:340px;margin-top:-90px}
+  .about .arch .sm{margin-right:-60px}
   .about .say{padding-top:0}
   .stage{display:none}
   .list .ph{display:block;grid-column:1/-1;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px 14px 14px 70px;margin-bottom:20px}
@@ -248,7 +246,7 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
   .steps{grid-template-columns:1fr;border-top:0;border-left:1px solid var(--line);margin-left:5px}
   .steps li{padding:0 0 34px 28px}
   .steps li::after{top:14px;left:-5px}
-  .wide{grid-template-columns:1fr;padding:0 0 0 var(--pad)}
+  .wide{grid-template-columns:1fr;padding-left:var(--pad)}
   .wide img{grid-column:1;grid-row:1;border-radius:70px 0 0 14px;aspect-ratio:4/3}
   .wide .need{grid-row:2;padding-right:var(--pad)}
   .team{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1*var(--pad));padding:0 var(--pad) 12px;scrollbar-width:none}
@@ -268,7 +266,7 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
   form{grid-template-columns:1fr;border-radius:24px 24px 24px 70px}
   .plan{grid-template-columns:1fr}
   .plan .amount,.plan .link{text-align:left;justify-self:start}
-  .nums{gap:26px}
+  .nums{gap:26px;flex-wrap:wrap}
   .nav .logo img{height:54px}
   .hero>img{object-position:58% 60%}
 }
@@ -318,7 +316,8 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
 <section class="wrap about" id="nosotros">
   <figure class="arch" style="margin-left:0;margin-right:0;margin-bottom:0">
     <img src="https://images.unsplash.com/photo-1741522509438-a120c0bb5e88?w=1000&q=80&auto=format&fit=crop" alt="Manos de una terapeuta trabajando la espalda con aceite">
-    <figcaption>Técnica de deslizamiento, presión a tu medida.</figcaption>
+    <img class="sm" src="https://images.unsplash.com/photo-1636714528228-f469eefb3eef?w=600&q=80&auto=format&fit=crop" alt="Velas aromáticas recién apagadas con difusor de varillas">
+    <figcaption>Técnica de deslizamiento y aromas suaves.</figcaption>
   </figure>
   <div class="say">
     <span class="eyebrow">Nosotros</span>
@@ -329,15 +328,12 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
       <div><b>5</b>terapeutas para que elijas con quién reservar</div>
       <div><b>4,_</b>en Google <span class="todo">por conectar</span></div>
     </div>
-    <div class="side">
-      <img src="https://images.unsplash.com/photo-1636714528228-f469eefb3eef?w=600&q=80&auto=format&fit=crop" alt="Velas aromáticas recién apagadas con difusor de varillas">
-      <ul>
-        <li>Atención personalizada</li>
-        <li>Reserva fácil por WhatsApp</li>
-        <li>Bebida de bienvenida en cada sesión</li>
-        <li><a class="link" href="#como" style="border:0">Cómo funciona <span>→</span></a></li>
-      </ul>
-    </div>
+    <ul class="side">
+      <li>Atención personalizada</li>
+      <li>Reserva fácil por WhatsApp</li>
+      <li>Bebida de bienvenida en cada sesión</li>
+      <li><a class="link" href="#como" style="border:0">Cómo funciona <span>→</span></a></li>
+    </ul>
   </div>
 </section>
 
