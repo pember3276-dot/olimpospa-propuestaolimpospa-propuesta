@@ -319,6 +319,14 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 
 /* Edición 1 */
 .hero{min-height:0;justify-content:flex-start}
+.revs{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding-bottom:4px}
+.revs::-webkit-scrollbar{display:none}
+.rev{display:block;flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;padding:20px 22px}
+.rev q{margin:8px 0 12px}
+.rev-nav{display:flex;justify-content:center;gap:10px;margin-top:18px}
+.rev-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.1rem;cursor:pointer}
+.rev-nav button:hover{border-color:var(--ink)}
+.rev-nav button:disabled{opacity:.35;cursor:default}
 .book{grid-template-columns:1fr}
 .map{flex:none;height:440px;min-height:0;background:var(--sand)}
 .map iframe{width:100%;height:100%;border:0;display:block}
@@ -357,6 +365,7 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 @media (max-width:1000px){
   .hero .wrap{padding-top:124px;padding-bottom:40px}
   .map{height:320px}
+  .rev{flex-basis:calc((100% - 16px)/2);padding:18px}
   .place dl{grid-template-columns:auto 1fr}
   .place-acts .btn{flex:1 1 100%}
   .gal{grid-template-columns:1fr 1fr;gap:10px}
@@ -369,6 +378,7 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   .wa span{display:none}
 }
 @media (max-width:560px){
+  .rev{flex-basis:84%}
   .d-gal{grid-template-columns:1fr 1fr;gap:10px}
   .exps{grid-template-columns:1fr}
 }
@@ -447,14 +457,15 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 <section class="sec wrap" id="resenas">
   <div class="head-c"><span class="eyebrow">Reseñas</span><h2>La confianza de miles de clientes en Medellín</h2>
     <div class="rev-head"><span style="color:var(--gold-deep);letter-spacing:.12em">★★★★★</span><span><span class="todo">4,_ · ___ reseñas en Google</span></span><a class="btn line" style="min-height:38px;padding:0 16px;font-size:.84rem" href="#top">Leer todas ↗</a></div></div>
-  <div class="revs">
-    <div class="card rev"><img src="../v4/img/sala-1.webp" alt=""><div><span class="stars">★★★★★</span><q>El lugar es muy tranquilo y se nota el cuidado en cada detalle. Desde que llegué me recibieron con una bebida y me sentí como en casa.</q><small>Camilo <span class="todo">reseña de ejemplo</span></small></div></div>
-    <div class="card rev"><img src="../v4/img/sala-3.webp" alt=""><div><span class="stars">★★★★★</span><q>Pedí el masaje Olimpo y salí renovado. La hora se pasa volando y la atención fue muy respetuosa todo el tiempo.</q><small>Andrés <span class="todo">reseña de ejemplo</span></small></div></div>
-    <div class="card rev"><img src="../v4/img/sala-2.webp" alt=""><div><span class="stars">★★★★★</span><q>Artemisa tiene unas manos increíbles. Llegué con mucho estrés del trabajo y salí completamente relajado. Ya reservé otra vez.</q><small>Julián <span class="todo">reseña de ejemplo</span></small></div></div>
-    <div class="card rev"><img src="../v4/img/t-aroma.webp" alt=""><div><span class="stars">★★★★★</span><q>Probé el de 4 manos y es otra experiencia. Las dos terapeutas van muy coordinadas y uno se desconecta de todo.</q><small>Sebastián <span class="todo">reseña de ejemplo</span></small></div></div>
-    <div class="card rev"><img src="../v4/img/t-toallas.webp" alt=""><div><span class="stars">★★★★★</span><q>Las habitaciones son muy limpias y la ducha al inicio y al final es un gran detalle. Todo muy discreto y bien organizado.</q><small>Mateo <span class="todo">reseña de ejemplo</span></small></div></div>
-    <div class="card rev"><img src="../v4/img/t-piedras.webp" alt=""><div><span class="stars">★★★★★</span><q>Reservé por WhatsApp y me respondieron de una. Queda fácil llegar en Laureles y me atendieron puntual. Muy recomendado.</q><small>Felipe <span class="todo">reseña de ejemplo</span></small></div></div>
+  <div class="revs" id="revs" tabindex="0" aria-label="Reseñas, desliza para ver más">
+    <div class="card rev"><div><span class="stars">★★★★★</span><q>El lugar es muy tranquilo y se nota el cuidado en cada detalle. Desde que llegué me recibieron con una bebida y me sentí como en casa.</q><small>Camilo <span class="todo">reseña de ejemplo</span></small></div></div>
+    <div class="card rev"><div><span class="stars">★★★★★</span><q>Pedí el masaje Olimpo y salí renovado. La hora se pasa volando y la atención fue muy respetuosa todo el tiempo.</q><small>Andrés <span class="todo">reseña de ejemplo</span></small></div></div>
+    <div class="card rev"><div><span class="stars">★★★★★</span><q>Artemisa tiene unas manos increíbles. Llegué con mucho estrés del trabajo y salí completamente relajado. Ya reservé otra vez.</q><small>Julián <span class="todo">reseña de ejemplo</span></small></div></div>
+    <div class="card rev"><div><span class="stars">★★★★★</span><q>Probé el de 4 manos y es otra experiencia. Las dos terapeutas van muy coordinadas y uno se desconecta de todo.</q><small>Sebastián <span class="todo">reseña de ejemplo</span></small></div></div>
+    <div class="card rev"><div><span class="stars">★★★★★</span><q>Las habitaciones son muy limpias y la ducha al inicio y al final es un gran detalle. Todo muy discreto y bien organizado.</q><small>Mateo <span class="todo">reseña de ejemplo</span></small></div></div>
+    <div class="card rev"><div><span class="stars">★★★★★</span><q>Reservé por WhatsApp y me respondieron de una. Queda fácil llegar en Laureles y me atendieron puntual. Muy recomendado.</q><small>Felipe <span class="todo">reseña de ejemplo</span></small></div></div>
   </div>
+  <div class="rev-nav"><button type="button" id="revPrev" aria-label="Reseñas anteriores">←</button><button type="button" id="revNext" aria-label="Más reseñas">→</button></div>
   <p class="note" style="text-align:center;margin-top:18px">Reseñas de ejemplo para la maqueta. Se reemplazan por reseñas reales de Google antes de publicar.</p>
 </section>
 
@@ -506,6 +517,12 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   document.getElementById('team').innerHTML=team.map(function(n,i){
     return '<a class="d-card" target="_blank" rel="noopener" href="'+WA+encodeURIComponent('Hola, quiero reservar con '+n)+'"><img src="../v4/img/'+n.toLowerCase()+'.webp" alt="'+n+', terapeuta de Olimpo"><span><b>'+n+'</b>Reservar ↗</span></a>';
   }).join('');
+  // Carrusel de reseñas
+  var rv=document.getElementById('revs'),rp=document.getElementById('revPrev'),rn=document.getElementById('revNext');
+  function rvStep(d){var c=rv.querySelector('.rev');rv.scrollBy({left:d*(c.offsetWidth+16),behavior:'smooth'})}
+  function rvState(){rp.disabled=rv.scrollLeft<4;rn.disabled=rv.scrollLeft+rv.clientWidth>rv.scrollWidth-4}
+  rp.addEventListener('click',function(){rvStep(-1)});rn.addEventListener('click',function(){rvStep(1)});
+  rv.addEventListener('scroll',rvState);window.addEventListener('resize',rvState);rvState();
   // Masajes: los campos vacíos quedan marcados como pendientes
   var P='<span class="todo">por definir</span>';
   var exps=[
