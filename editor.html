@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Editor en vivo · Olimpo Spa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/material-darker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/dialog/dialog.min.css">
+<style>
+:root{--ink:#001E19;--green:#07382F;--gold:#E4C45D;--ivory:#F7F2E7;--sage:#B9CBC3}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{display:flex;flex-direction:column;background:var(--ink);color:var(--ivory);font:400 15px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;height:100dvh}
+.bar{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid rgba(247,242,231,.14);flex-wrap:wrap}
+.bar img{height:34px}
+.bar b{font-weight:600;margin-right:6px}
+.sp{flex:1}
+select,button{font:inherit;color:var(--ivory);background:var(--green);border:1px solid rgba(247,242,231,.22);border-radius:8px;padding:8px 12px;cursor:pointer;min-height:38px}
+button:hover,select:hover{border-color:var(--gold)}
+button.gold{background:var(--gold);color:var(--ink);border-color:var(--gold);font-weight:600}
+button[aria-pressed=true]{background:var(--ivory);color:var(--ink)}
+.seg{display:inline-flex}
+.seg button{border-radius:0}
+.seg button:first-child{border-radius:8px 0 0 8px}
+.seg button:last-child{border-radius:0 8px 8px 0;margin-left:-1px}
+#status{font-size:12px;color:var(--sage);min-width:9em;text-align:right}
+.work{flex:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:0}
+.pane{min-width:0;min-height:0;display:flex;flex-direction:column}
+#codePane{border-right:1px solid rgba(247,242,231,.14)}
+#code{flex:1;width:100%;resize:none;border:0;outline:0;background:#12211e;color:#e8e6df;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace;padding:12px;white-space:pre;tab-size:2}
+.CodeMirror{flex:1;height:auto;min-height:0;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace}
+#prevPane{background:#2a3936;align-items:center;overflow:auto}
+#frame{border:0;background:#fff;width:100%;height:100%;flex:none;transition:width .25s}
+#prevPane.phone{padding:14px 0}
+#prevPane.phone #frame{width:390px;max-width:100%;height:calc(100% - 0px);border-radius:22px;box-shadow:0 10px 40px rgba(0,0,0,.45)}
+.tabs{display:none}
+.help{font-size:12px;color:var(--sage);padding:6px 12px;border-top:1px solid rgba(247,242,231,.14)}
+.help a{color:var(--gold)}
+@media (max-width:820px){
+  .tabs{display:inline-flex}
+  .work{grid-template-columns:1fr}
+  .pane{display:none}
+  .pane.show{display:flex}
+  #codePane{border:0}
+  .dev{display:none}
+  .bar b{display:none}
+  #status{display:none}
+  .bar img,.help,.sp{display:none}
+  .bar{gap:6px;padding:6px 8px}
+  select,button{padding:6px 9px;font-size:13px;min-height:36px}
+  #dl{margin-left:auto}
+  #prevPane.phone{padding:0}
+  #prevPane.phone #frame{width:100%;border-radius:0}
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <img src="logo-olimpo.png" alt="Olimpo">
+  <b>Editor en vivo</b>
+  <select id="ver" aria-label="Versión">
+    <option value="v4/">Versión 4.0</option>
+    <option value="v5/">Versión 5.0</option>
+    <option value="v6/">Versión 6.0</option>
+    <option value="v7/">Versión 7.0</option>
+    <option value="">Versión 3.0</option>
+  </select>
+  <span class="seg tabs" role="group" aria-label="Panel"><button id="tabCode" aria-pressed="true">Código</button><button id="tabPrev" aria-pressed="false">Vista previa</button></span>
+  <span class="seg dev" role="group" aria-label="Tamaño de la vista previa"><button id="devPc" aria-pressed="true">Computador</button><button id="devPhone" aria-pressed="false">Celular</button></span>
+  <span class="sp"></span>
+  <span id="status"></span>
+  <button id="reset" title="Descarta tus cambios y vuelve al original publicado">Restaurar original</button>
+  <button id="dl" class="gold">Descargar HTML</button>
+</div>
+<div class="work">
+  <div class="pane show" id="codePane"><textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Código HTML"></textarea></div>
+  <div class="pane" id="prevPane"><iframe id="frame" title="Vista previa" sandbox="allow-scripts allow-popups allow-forms"></iframe></div>
+</div>
+<div class="help">Los cambios se ven al instante y se guardan solo en este navegador. La página publicada no cambia hasta que envíes el archivo descargado.</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/searchcursor.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/dialog/dialog.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/search/search.min.js"></script>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var ta=$('code'),frame=$('frame'),ver=$('ver'),status=$('status');
+  var root=location.href.replace(/[^\/]*([?#].*)?$/,'');
+  var cm=null,timer=null,loading=false;
+  var narrow=window.matchMedia('(max-width:820px)');
+
+  if(window.CodeMirror){
+    cm=CodeMirror.fromTextArea(ta,{mode:'htmlmixed',theme:'material-darker',lineNumbers:!narrow.matches,lineWrapping:narrow.matches,tabSize:2,indentUnit:2,inputStyle:'contenteditable'});
+    cm.on('change',function(){if(!loading)changed()});
+  }else{
+    ta.addEventListener('input',changed);
+  }
+  function get(){return cm?cm.getValue():ta.value}
+  function set(v){loading=true;if(cm){cm.setValue(v);cm.clearHistory()}else ta.value=v;loading=false}
+  function key(){return 'olimpo-editor:'+ver.value}
+  function store(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,v)}catch(e){}}
+  function read(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+  // La vista previa resuelve imágenes y enlaces relativos contra la carpeta de la versión.
+  function render(){
+    var html=get();
+    var base='<base href="'+root+ver.value+'">';
+    var fix='<script>document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href");if(h.charAt(0)==="#"){e.preventDefault();var t=h.length>1&&document.getElementById(h.slice(1));if(t)t.scrollIntoView({behavior:"smooth"});else window.scrollTo({top:0,behavior:"smooth"})}else if(!a.target){e.preventDefault();window.open(a.href,"_blank","noopener")}},true)<\/script>';
+    html=/<head[^>]*>/i.test(html)?html.replace(/<head[^>]*>/i,function(m){return m+base+fix}):base+fix+html;
+    frame.srcdoc=html;
+  }
+  function changed(){
+    status.textContent='Editando…';
+    clearTimeout(timer);
+    timer=setTimeout(function(){store(key(),get());render();status.textContent='Guardado en este navegador'},450);
+  }
+  function load(fresh){
+    var saved=fresh?null:read(key());
+    if(saved!==null){set(saved);render();status.textContent='Recuperé tus cambios guardados';return}
+    status.textContent='Cargando…';
+    fetch(root+ver.value+'index.html',{cache:'no-store'}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){
+      set(t);render();status.textContent='Original cargado';
+    }).catch(function(){status.textContent='No pude cargar esta versión'});
+  }
+
+  ver.addEventListener('change',function(){store('olimpo-editor:last',ver.value);load(false)});
+  $('reset').addEventListener('click',function(){
+    var b=this;
+    if(b.dataset.sure){delete b.dataset.sure;b.textContent='Restaurar original';store(key(),null);load(true);return}
+    b.dataset.sure='1';b.textContent='¿Seguro? Toca otra vez';
+    setTimeout(function(){delete b.dataset.sure;b.textContent='Restaurar original'},3500);
+  });
+  $('dl').addEventListener('click',function(){
+    var name='olimpo-'+(ver.value.replace('/','')||'v3')+'-index.html';
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([get()],{type:'text/html'}));a.download=name;
+    document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},2000);
+    status.textContent='Descargado: '+name;
+  });
+
+  // Tamaño de la vista previa (computador)
+  function dev(phone){$('prevPane').classList.toggle('phone',phone);$('devPhone').setAttribute('aria-pressed',phone);$('devPc').setAttribute('aria-pressed',!phone)}
+  $('devPc').addEventListener('click',function(){dev(false)});
+  $('devPhone').addEventListener('click',function(){dev(true)});
+  // Pestañas (celular)
+  function tab(prev){
+    $('tabPrev').setAttribute('aria-pressed',prev);$('tabCode').setAttribute('aria-pressed',!prev);
+    if(narrow.matches){$('prevPane').classList.toggle('show',prev);$('codePane').classList.toggle('show',!prev);if(!prev&&cm)cm.refresh()}
+  }
+  $('tabCode').addEventListener('click',function(){tab(false)});
+  $('tabPrev').addEventListener('click',function(){tab(true)});
+  function layout(){
+    if(narrow.matches){tab($('tabPrev').getAttribute('aria-pressed')==='true')}
+    else{$('prevPane').classList.add('show');$('codePane').classList.add('show');if(cm)cm.refresh()}
+  }
+  narrow.addEventListener('change',layout);layout();
+
+  var q=new URLSearchParams(location.search).get('v'),last=read('olimpo-editor:last');
+  var want=q?(q==='v3'?'':q+'/'):last;
+  if(want!==null&&[].some.call(ver.options,function(o){return o.value===want}))ver.value=want;
+  load(false);
+})();
+</script>
+</body>
+</html>
