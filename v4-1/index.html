@@ -335,8 +335,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 .d-txt .btn{margin-top:10px}
 .d-gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .d-card{position:relative;display:block;border-radius:var(--r);overflow:hidden;aspect-ratio:3/4.6;background:var(--ink);color:#F7F2E7;text-decoration:none}
-.d-card.extra{display:none}
-.d-gal.all .d-card.extra{display:block}
 .d-card img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;transition:transform .8s ease}
 .d-card:hover img{transform:scale(1.04)}
 .d-card span{position:absolute;inset:auto 0 0 0;padding:48px 16px 14px;background:linear-gradient(0deg,rgba(0,30,25,.9),transparent);font-size:.82rem;color:var(--gold-hi)}
@@ -365,8 +363,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 }
 @media (max-width:560px){
   .d-gal{grid-template-columns:1fr 1fr;gap:10px}
-  .d-gal .d-card:nth-child(3){display:none}
-  .d-gal.all .d-card:nth-child(3){display:block}
   .exps{grid-template-columns:1fr}
 }
 </style>
@@ -433,7 +429,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
     </div>
     <div>
       <div class="d-gal" id="team"></div>
-      <p class="center"><button class="btn line" type="button" id="moreGal" aria-expanded="false">Ver más galería</button></p>
     </div>
   </div>
 </section>
@@ -541,10 +536,8 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   // Galería de terapeutas en fotos verticales
   var team=['Hera','Artemisa','Afrodita','Isis','Medusa'];
   document.getElementById('team').innerHTML=team.map(function(n,i){
-    return '<a class="d-card'+(i>2?' extra':'')+'" target="_blank" rel="noopener" href="'+WA+encodeURIComponent('Hola, quiero reservar con '+n)+'"><img src="../v4/img/'+n.toLowerCase()+'.webp" alt="'+n+', terapeuta de Olimpo"><span><b>'+n+'</b>Reservar ↗</span></a>';
+    return '<a class="d-card" target="_blank" rel="noopener" href="'+WA+encodeURIComponent('Hola, quiero reservar con '+n)+'"><img src="../v4/img/'+n.toLowerCase()+'.webp" alt="'+n+', terapeuta de Olimpo"><span><b>'+n+'</b>Reservar ↗</span></a>';
   }).join('');
-  var mg=document.getElementById('moreGal');
-  mg.addEventListener('click',function(){var o=document.getElementById('team').classList.toggle('all');mg.setAttribute('aria-expanded',o);mg.textContent=o?'Ver menos':'Ver más galería'});
   // Masajes: los campos vacíos quedan marcados como pendientes
   var P='<span class="todo">por definir</span>';
   var exps=[
