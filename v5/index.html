@@ -236,7 +236,8 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
   .facts b{font-size:1.3rem}
   .about,.menu-grid,.packs-grid,.voices,.book,.faq{grid-template-columns:1fr}
   .about .arch{max-width:340px;margin-top:-90px}
-  .about .arch .sm{margin-right:-60px}
+  .about .arch .sm{margin-right:-6%}
+  .about .arch{max-width:min(340px,82%)}
   .about .say{padding-top:0}
   .stage{display:none}
   .list .ph{display:block;grid-column:1/-1;width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:14px 14px 14px 70px;margin-bottom:20px}
@@ -266,7 +267,16 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
   form{grid-template-columns:1fr;border-radius:24px 24px 24px 70px}
   .plan{grid-template-columns:1fr}
   .plan .amount,.plan .link{text-align:left;justify-self:start}
-  .nums{gap:26px;flex-wrap:wrap}
+  .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .nums div{min-width:0;font-size:.8rem}
+  .nums b{font-size:1.9rem}
+  .hero h1{font-size:clamp(2.5rem,12.5vw,3.4rem)}
+  .hero .sub{font-size:1.02rem;margin:20px 0 26px}
+  .hero-in{padding-top:36px}
+  .acts .btn{width:100%;justify-content:center}
+  .ther{flex-basis:70%}
+  .book .ph{grid-template-columns:110px 1fr;gap:18px}
+  .draft{font-size:.72rem}
   .nav .logo img{height:54px}
   .hero>img{object-position:58% 60%}
 }
@@ -275,7 +285,7 @@ details p{padding:0 44px 28px 0;color:var(--muted);max-width:38em}
 </head>
 <body>
 
-<div class="draft">Maqueta de propuesta · versión 5.0 · precios, horario y reseñas por completar · <a href="../v4/">Ver versión 4.0</a> · <a href="../">Versión 3.0</a> · <a href="../propuesta.html">Documento</a></div>
+<div class="draft">Maqueta de propuesta · versión 5.0 · precios, horario y reseñas por completar · <a href="../v7/">Versión 7.0</a> · <a href="../v6/">6.0</a> · <a href="../v4/">4.0</a> · <a href="../">3.0</a> · <a href="../propuesta.html">Documento</a></div>
 
 <section class="hero dark" id="top">
   <img src="https://images.unsplash.com/photo-1611920630418-f587fdc3bf94?w=2000&q=80&auto=format&fit=crop" alt="Cabina de masajes con luz cálida y camilla preparada">
