@@ -319,6 +319,11 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 
 /* Edición 1 */
 .hero{min-height:0;justify-content:flex-start}
+.book{grid-template-columns:1fr}
+.map{flex:none;height:440px;min-height:0;background:var(--sand)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.place dl{grid-template-columns:auto 1fr auto 1fr auto 1fr;align-items:baseline}
+.place-acts{display:flex;gap:12px;flex-wrap:wrap;padding:0 10px 10px}
 .hero .wrap{padding-top:116px;padding-bottom:64px}
 .tagline{font-family:var(--head);font-weight:600;color:var(--gold);letter-spacing:.02em;margin-top:16px;font-size:1.05rem}
 .hero .sub{margin-top:10px}
@@ -351,6 +356,9 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 .wa svg{width:28px;height:28px}
 @media (max-width:1000px){
   .hero .wrap{padding-top:124px;padding-bottom:40px}
+  .map{height:320px}
+  .place dl{grid-template-columns:auto 1fr}
+  .place-acts .btn{flex:1 1 100%}
   .gal{grid-template-columns:1fr 1fr;gap:10px}
   .gal figure{aspect-ratio:3/4}
   .gal figure:first-child{grid-column:span 2;aspect-ratio:4/5}
@@ -448,25 +456,17 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
 </section>
 
 <section class="sec wrap" id="reservar">
-  <div class="head-c"><span class="eyebrow">Reserva tu cita</span><h2>Empieza hoy tu momento de bienestar</h2><p>Elige masaje y hora. Al enviar se abre WhatsApp con tu solicitud lista y te confirmamos la cita.</p></div>
+  <div class="head-c"><span class="eyebrow">Reserva tu cita</span><h2>Empieza hoy tu momento de bienestar</h2><p>Estamos en Laureles, Medellín. Escríbenos por WhatsApp y te confirmamos la cita.</p></div>
   <div class="book">
     <div class="card place">
-      <div class="map" role="img" aria-label="Mapa de ubicación de Olimpo Spa en Laureles"><a class="btn line open" href="https://www.google.com/maps/search/?api=1&amp;query=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn" target="_blank" rel="noopener">Abrir en Maps ↗</a><span class="pin"></span></div>
+      <div class="map"><iframe title="Mapa de ubicación de Olimpo Spa en Laureles" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn&amp;z=16&amp;output=embed"></iframe></div>
       <dl>
         <dt>Dirección</dt><dd>Carrera 77B #48B-41, Laureles, Medellín</dd>
         <dt>Teléfono</dt><dd><a href="tel:+573012295396">+57 301 229 5396</a></dd>
         <dt>Horario</dt><dd><span class="todo">por confirmar</span></dd>
       </dl>
+      <div class="place-acts"><a class="btn" target="_blank" rel="noopener" href="https://wa.me/573012295396?text=Hola%2C%20quiero%20reservar%20un%20masaje%20en%20Olimpo%20Spa">Reservar por WhatsApp ↗</a><a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn" target="_blank" rel="noopener">Abrir en Maps ↗</a></div>
     </div>
-    <form class="card" id="bookForm" novalidate>
-      <label>Nombre<input id="f-nombre" name="nombre" autocomplete="name" placeholder="Tu nombre" required></label>
-      <label>Fecha preferida<input id="f-fecha" name="fecha" type="date"></label>
-      <label>Masaje<select id="f-masaje" name="masaje"><option>Olimpo</option><option>Spartacus</option><option>Gladiador</option><option>Fuego divino</option><option>4 manos</option><option>6 manos</option><option>Quiero que me recomienden</option></select></label>
-      <label>Terapeuta<select id="f-terapeuta" name="terapeuta"><option>Sin preferencia</option><option>Hera</option><option>Artemisa</option><option>Afrodita</option><option>Isis</option><option>Medusa</option></select></label>
-      <label class="w">Notas (opcional)<textarea id="f-notas" name="notas" placeholder="Hora que prefieres, zonas con tensión, alergias…"></textarea></label>
-      <button class="btn" type="submit">Enviar por WhatsApp ↗</button>
-      <p class="fine">No guardamos tus datos: el mensaje se envía desde tu propio WhatsApp.</p>
-    </form>
   </div>
 </section>
 
@@ -542,18 +542,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   // Filtro de preguntas
   var tabs=document.querySelectorAll('.tabs button');
   tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t)});document.querySelectorAll('.faq details').forEach(function(d){d.hidden=t.dataset.cat!=='all'&&d.dataset.cat!==t.dataset.cat})})});
-  // Formulario: arma el mensaje y abre WhatsApp
-  document.getElementById('bookForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var v=function(id){return document.getElementById(id).value.trim()};
-    var n=document.getElementById('f-nombre');
-    if(!v('f-nombre')){n.focus();n.style.borderColor='#A8443A';return}
-    var msg='Hola, soy '+v('f-nombre')+'. Quiero reservar: '+v('f-masaje')+'.';
-    if(v('f-fecha'))msg+=' Fecha: '+v('f-fecha').split('-').reverse().join('/')+'.';
-    if(v('f-terapeuta')!=='Sin preferencia')msg+=' Terapeuta: '+v('f-terapeuta')+'.';
-    if(v('f-notas'))msg+=' Notas: '+v('f-notas');
-    window.open(WA+encodeURIComponent(msg),'_blank','noopener');
-  });
 })();
 </script>
 </body>
