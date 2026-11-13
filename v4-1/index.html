@@ -385,7 +385,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
       <li><a href="#espacios">Espacios</a></li>
       <li><a href="#diosas">Nuestras diosas</a></li>
       <li><a href="#masajes">Masajes</a></li>
-      <li><a href="#preguntas">Preguntas</a></li>
     </ul>
     <span class="lang"><b>ES</b> · EN</span>
     <a class="btn" href="#reservar">Reserva tu sesión <span class="ar">↗</span></a>
@@ -393,7 +392,7 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   </header>
 </div></div>
 <nav class="mobile-menu" id="mobileMenu" aria-label="Menú principal">
-  <a href="#espacios">Espacios</a><a href="#diosas">Nuestras diosas</a><a href="#masajes">Masajes y valores</a><a href="#preguntas">Preguntas</a>
+  <a href="#espacios">Espacios</a><a href="#diosas">Nuestras diosas</a><a href="#masajes">Masajes y valores</a>
   <a class="btn" href="#reservar">Reserva tu sesión ↗</a>
 </nav>
 
@@ -470,27 +469,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   </div>
 </section>
 
-<section class="sec wrap" id="preguntas">
-  <div class="head-c"><span class="eyebrow">Preguntas</span><h2>¿Dudas antes de tu primera visita?</h2></div>
-  <div class="faq">
-    <div class="card help">
-      <div class="avs"><img src="../v4/img/av-hera.webp" alt=""><img src="../v4/img/av-isis.webp" alt=""><img src="../v4/img/av-medusa.webp" alt=""></div>
-      <h3>¿Aún tienes preguntas?</h3>
-      <p>Escríbenos o llámanos y te respondemos en el horario de atención.</p>
-      <a class="btn dark" href="https://wa.me/573012295396?text=Hola%2C%20tengo%20una%20pregunta" target="_blank" rel="noopener">Escribir por WhatsApp</a>
-      <a class="btn line" href="tel:+573012295396">Llamar</a>
-    </div>
-    <div>
-      <div class="tabs" role="group" aria-label="Filtrar preguntas"><button type="button" aria-pressed="true" data-cat="all">Todas</button><button type="button" aria-pressed="false" data-cat="reservas">Reservas</button><button type="button" aria-pressed="false" data-cat="masajes">Masajes</button><button type="button" aria-pressed="false" data-cat="pagos">Pagos</button></div>
-      <details data-cat="reservas"><summary><span><small>Reservas</small>¿Con cuánta anticipación debo reservar?</span></summary><p>Respuesta por confirmar con el spa. Todos los servicios se reservan con anticipación o visitando el lugar.</p></details>
-      <details data-cat="reservas"><summary><span><small>Reservas</small>¿Puedo pedir siempre a la misma terapeuta?</span></summary><p>Sí. Elígela en el formulario o dinos su nombre por WhatsApp y revisamos su disponibilidad.</p></details>
-      <details data-cat="masajes"><summary><span><small>Masajes</small>¿Qué incluye cada sesión?</span></summary><p>Todos los masajes incluyen bebida de bienvenida y ducha al inicio y al final. Cada masaje detalla lo que incluye.</p></details>
-      <details data-cat="masajes"><summary><span><small>Masajes</small>¿Cuál masaje me conviene?</span></summary><p>Cuéntanos cómo te sientes y te recomendamos uno. Respuesta por ajustar con el spa.</p></details>
-      <details data-cat="pagos"><summary><span><small>Pagos</small>¿Qué formas de pago reciben?</span></summary><p>Respuesta por confirmar con el spa.</p></details>
-      <details data-cat="pagos"><summary><span><small>Pagos</small>¿Hay parqueadero cerca?</span></summary><p>Respuesta por confirmar con el spa.</p></details>
-    </div>
-  </div>
-</section>
 </main>
 
 <div class="end dark"><div class="end-in">
@@ -501,7 +479,7 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   </div>
   <footer class="foot">
     <div><a class="logo" href="#top"><img src="../logo-olimpo.png" alt="Olimpo"></a><p>Spa y masajes relajantes en Laureles, Medellín. Reservas con anticipación o en el lugar.</p></div>
-    <div><h4>Enlaces</h4><ul><li><a href="#espacios">Espacios</a></li><li><a href="#diosas">Nuestras diosas</a></li><li><a href="#masajes">Masajes</a></li><li><a href="#preguntas">Preguntas</a></li></ul></div>
+    <div><h4>Enlaces</h4><ul><li><a href="#espacios">Espacios</a></li><li><a href="#diosas">Nuestras diosas</a></li><li><a href="#masajes">Masajes</a></li></ul></div>
     <div><h4>Masajes</h4><ul><li><a href="#masajes">Olimpo</a></li><li><a href="#masajes">Spartacus y Gladiador</a></li><li><a href="#masajes">Fuego divino</a></li><li><a href="#masajes">4 y 6 manos</a></li></ul></div>
     <div><h4>Contacto</h4><ul><li>Carrera 77B #48B-41, Laureles</li><li><a href="https://wa.me/573012295396" target="_blank" rel="noopener">+57 301 229 5396</a></li><li>Horario <span class="todo">por confirmar</span></li><li><a href="https://www.instagram.com/olimpospamassage" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@olimpospa_" target="_blank" rel="noopener">TikTok</a></li></ul></div>
   </footer>
@@ -539,9 +517,6 @@ details p{padding:0 20px 18px;color:var(--muted);max-width:62ch}
   function setOpen(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o)}
   b.addEventListener('click',function(){setOpen(!m.classList.contains('open'))});
   m.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false)});
-  // Filtro de preguntas
-  var tabs=document.querySelectorAll('.tabs button');
-  tabs.forEach(function(t){t.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-pressed',x===t)});document.querySelectorAll('.faq details').forEach(function(d){d.hidden=t.dataset.cat!=='all'&&d.dataset.cat!==t.dataset.cat})})});
 })();
 </script>
 </body>
