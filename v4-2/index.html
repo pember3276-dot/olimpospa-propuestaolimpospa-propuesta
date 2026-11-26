@@ -166,7 +166,7 @@
       "priceCurrency": "COP",
       "itemOffered": {
        "@type": "Service",
-       "name": "Voyerista del Olimpo (parejas)",
+       "name": "Dúo del Olimpo (parejas)",
        "description": "Experiencia de bienestar en pareja. Incluye bebida de bienvenida y ducha al inicio y al final."
       }
      },
@@ -234,7 +234,7 @@
      "name": "¿Tienen experiencias para parejas?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Sí. Tenemos dos experiencias para parejas: Voyerista del Olimpo por $220.000 y La reina y el emperador por $320.000."
+      "text": "Sí. Tenemos dos experiencias para parejas: Dúo del Olimpo por $220.000 y La reina y el emperador por $320.000."
      }
     },
     {
@@ -610,7 +610,7 @@ section.sec{padding-top:72px}
   <div class="diosas">
     <div class="d-txt">
       <span class="eyebrow">Nuestras diosas</span>
-      <h2>Sofisticación, relajación y placer</h2>
+      <h2>Sofisticación, relajación y bienestar</h2>
       <p>En Olimpo Spa Massage, combinamos masajes de relajación profunda con un ambiente elegante y de inspiración griega.</p>
       <p>Disfruta una experiencia sensorial pensada para liberar tensiones y dedicarte un momento de bienestar.</p>
       <div class="icons">
@@ -631,7 +631,7 @@ section.sec{padding-top:72px}
 
 <section class="sec wrap" id="masajes">
   <div class="head-c exp-head">
-    <span class="eyebrow both">Masajes sensoriales Medellín</span><br>
+    <span class="eyebrow both">Masajes relajantes Medellín</span><br>
     <h2><svg class="laurel"><use href="#i-laurel"/></svg>Elige tu experiencia<svg class="laurel r"><use href="#i-laurel"/></svg></h2>
     <p>Todos los masajes incluyen bebida de bienvenida y ducha al inicio y al final.</p>
     <div class="pill-line"><span><svg><use href="#i-temple"/></svg>Terapeuta en atuendo de inspiración griega</span></div>
@@ -661,7 +661,7 @@ section.sec{padding-top:72px}
     <details><summary>¿Cuál es el horario de atención?</summary><p>Atendemos de lunes a sábado de 11 am a 7 pm. Los domingos atendemos solo con reserva previa.</p></details>
     <details><summary>¿Cuánto cuesta un masaje en Olimpo Spa?</summary><p>Los valores son: Olimpo $160.000, Spartacus $190.000, Gladiador $220.000, Fuego divino $350.000, masaje a 4 manos $320.000 y masaje a 6 manos $430.000. Precios en pesos colombianos.</p></details>
     <details><summary>¿Qué incluye cada masaje?</summary><p>Todos los masajes incluyen bebida de bienvenida y ducha al inicio y al final, en una habitación privada, con terapeuta en atuendo de inspiración griega.</p></details>
-    <details><summary>¿Tienen experiencias para parejas?</summary><p>Sí. Tenemos dos experiencias para parejas: Voyerista del Olimpo por $220.000 y La reina y el emperador por $320.000.</p></details>
+    <details><summary>¿Tienen experiencias para parejas?</summary><p>Sí. Tenemos dos experiencias para parejas: Dúo del Olimpo por $220.000 y La reina y el emperador por $320.000.</p></details>
     <details><summary>¿Qué es el masaje a 4 manos y a 6 manos?</summary><p>Es un masaje en el que dos terapeutas (4 manos, $320.000) o tres terapeutas (6 manos, $430.000) trabajan al mismo tiempo y en armonía.</p></details>
     <details><summary>¿Cómo reservo una cita?</summary><p>La reserva se hace por WhatsApp al +57 301 229 5396. No hay que llenar formularios: un asesor confirma la disponibilidad y la hora.</p></details>
     <details><summary>¿Qué medios de pago aceptan?</summary><p>Aceptamos efectivo en pesos colombianos y en dólares, y transferencia.</p></details>
@@ -771,9 +771,9 @@ section.sec{padding-top:72px}
   var waBtn='<a class="btn" data-wa="Hola, quiero reservar un masaje en Olimpo Spa">Ir al chat de WhatsApp ↗</a>';
   var HOLA='Hola, soy la asistente virtual de Olimpo. Nuestro horario es de 11 am a 7 pm de lunes a sábado, y domingos bajo reserva. Para una atención más humana, da clic en el siguiente botón y te llevará a nuestro chat corporativo.'+waBtn;
   function li(a){return '<ul>'+a.map(function(x){return '<li><span>'+x[0]+'</span><b>'+x[1]+'</b></li>'}).join('')+'</ul>'}
-  var pareja=[['Voyerista del Olimpo','$220.000'],['La reina y el emperador','$320.000']];
+  var pareja=[['Dúo del Olimpo','$220.000'],['La reina y el emperador','$320.000']];
   var ans=[
-    ['Masajes y precios','Estos son nuestros masajes y sus valores:'+li([['Olimpo','$160.000'],['Spartacus','$190.000'],['Gladiador','$220.000'],['Fuego divino','$350.000'],['4 manos','$320.000'],['6 manos','$430.000'],['Voyerista del Olimpo (parejas)','$220.000'],['La reina y el emperador','$320.000']])+waBtn],
+    ['Masajes y precios','Estos son nuestros masajes y sus valores:'+li([['Olimpo','$160.000'],['Spartacus','$190.000'],['Gladiador','$220.000'],['Fuego divino','$350.000'],['4 manos','$320.000'],['6 manos','$430.000'],['Dúo del Olimpo (parejas)','$220.000'],['La reina y el emperador','$320.000']])+waBtn],
     ['Experiencia para parejas','Tenemos dos experiencias para parejas:'+li(pareja)+waBtn],
     ['Horario y ubicación','Atendemos de lunes a sábado de 11 am a 7 pm, y domingos bajo reserva. Estamos en la Carrera 77B #48B-41, Laureles, Medellín.<iframe title="Mapa" loading="lazy" src="https://www.google.com/maps?q='+encodeURIComponent('Carrera 77B #48B-41, Laureles, Medellín')+'&z=15&output=embed"></iframe><a class="btn" target="_blank" rel="noopener" href="'+MAPS+'">Cómo llegar ↗</a>'],
     ['Quiero reservar','Perfecto. Toca el botón y te atendemos de inmediato por WhatsApp.'+waBtn]
