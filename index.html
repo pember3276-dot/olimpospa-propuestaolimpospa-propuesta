@@ -41,10 +41,10 @@
    "url": "https://olimpospa.com.co/",
    "image": [
     "https://olimpospa.com.co/img/og.jpg",
-    "https://olimpospa.com.co/img/sala-clasica.webp",
-    "https://olimpospa.com.co/img/sala-espejo.webp"
+    "https://olimpospa.com.co/img/sala-clasica.webp?v=7428fe19",
+    "https://olimpospa.com.co/img/sala-espejo.webp?v=7428fe19"
    ],
-   "logo": "https://olimpospa.com.co/logo-olimpo.png",
+   "logo": "https://olimpospa.com.co/logo-olimpo.webp",
    "telephone": "+573043635398",
    "priceRange": "$160.000 - $430.000 COP",
    "currenciesAccepted": "COP, USD",
@@ -195,10 +195,12 @@
  ]
 }
 </script>
-<link rel="icon" href="logo-olimpo.png">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Lora:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Lora:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@500;600;700&family=Lora:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
+<link rel="preload" as="image" href="img/hero.webp?v=7428fe19" fetchpriority="high">
 <style>
 /* Versión 4.0, edición 2. Sigue la maqueta de página completa enviada por el cliente. */
 :root{
@@ -455,6 +457,7 @@ section.sec{padding-top:72px}
   .foot{grid-template-columns:1fr 1fr;gap:24px 18px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.eyebrow{color:#7E5E0D}.who img,.bot header img{object-fit:contain}
 </style>
 </head>
 <body>
@@ -475,7 +478,7 @@ section.sec{padding-top:72px}
 
 <div class="navwrap" id="top"><div class="wrap">
   <header class="nav">
-    <a class="logo" href="#top" aria-label="Olimpo Spa, inicio"><img src="logo-olimpo.png" alt="Olimpo"></a>
+    <a class="logo" href="#top" aria-label="Olimpo Spa, inicio"><img src="logo-olimpo.webp?v=7428fe19" alt="Olimpo" width="360" height="253"></a>
     <ul>
       <li><a href="#espacios">Espacios</a></li>
       <li><a href="#diosas">Nuestras diosas</a></li>
@@ -493,7 +496,7 @@ section.sec{padding-top:72px}
 
 <main>
 <section class="hero">
-  <img class="bg" src="img/hero.webp" alt="">
+  <img fetchpriority="high" decoding="async" class="bg" src="img/hero.webp?v=7428fe19" alt="" width="1500" height="760">
   <div class="wrap">
     <h1>Relájate, respira. <em>Vuelve a ti.</em></h1>
     <p class="tagline">Spa inspirado en diosas de la mitología griega</p>
@@ -511,15 +514,15 @@ section.sec{padding-top:72px}
   <div class="car-wrap"><div class="car">
     <button type="button" class="arrow pv" id="espPv" aria-label="Fotos anteriores">‹</button>
     <div class="track" id="espTrack" tabindex="0" aria-label="Galería de espacios, desliza para ver más">
-      <figure><img src="img/sala-clasica.webp" alt="Sala con bustos clásicos, fuente y velas" loading="lazy"></figure>
-      <figure><img src="img/sala-espejo.webp" alt="Habitación con camilla y espejo dorado iluminado" loading="lazy"></figure>
-      <figure><img src="img/pasillo.webp" alt="Pasillo del spa con pared verde esmeralda" loading="lazy"></figure>
-      <figure><img src="img/sala-palma.webp" alt="Sala de espera con cortinas, palma y luz cálida" loading="lazy"></figure>
-      <figure><img src="img/salon.webp" alt="Salón con sofá y luz cálida" loading="lazy"></figure>
-      <figure><img src="img/camilla.webp" alt="Habitación con camilla y camino verde esmeralda" loading="lazy"></figure>
-      <figure><img src="img/sala-calida.webp" alt="Habitación cálida con velas y palma" loading="lazy"></figure>
-      <figure><img src="img/rincon.webp" alt="Habitación con camilla y luz indirecta" loading="lazy"></figure>
-      <figure><img src="img/sala-estrellas.webp" alt="Salón con cielo de luces de colores" loading="lazy"></figure>
+      <figure><img src="img/sala-clasica.webp?v=7428fe19" alt="Sala con bustos clásicos, fuente y velas" loading="lazy" width="820" height="1456"></figure>
+      <figure><img src="img/sala-espejo.webp?v=7428fe19" alt="Habitación con camilla y espejo dorado iluminado" loading="lazy" width="820" height="1457"></figure>
+      <figure><img src="img/pasillo.webp?v=7428fe19" alt="Pasillo del spa con pared verde esmeralda" loading="lazy" width="820" height="1457"></figure>
+      <figure><img src="img/sala-palma.webp?v=7428fe19" alt="Sala de espera con cortinas, palma y luz cálida" loading="lazy" width="820" height="1457"></figure>
+      <figure><img src="img/salon.webp?v=7428fe19" alt="Salón con sofá y luz cálida" loading="lazy" width="820" height="1457"></figure>
+      <figure><img src="img/camilla.webp?v=7428fe19" alt="Habitación con camilla y camino verde esmeralda" loading="lazy" width="820" height="1456"></figure>
+      <figure><img src="img/sala-calida.webp?v=7428fe19" alt="Habitación cálida con velas y palma" loading="lazy" width="820" height="1457"></figure>
+      <figure><img src="img/rincon.webp?v=7428fe19" alt="Habitación con camilla y luz indirecta" loading="lazy" width="820" height="1457"></figure>
+      <figure><img src="img/sala-estrellas.webp?v=7428fe19" alt="Salón con cielo de luces de colores" loading="lazy" width="820" height="1093"></figure>
     </div>
     <button type="button" class="arrow nx" id="espNx" aria-label="Más fotos">›</button>
   </div></div>
@@ -542,8 +545,8 @@ section.sec{padding-top:72px}
     </div>
     <div class="d-gal" id="team"></div>
     <div class="vid" id="vid">
-      <div class="who"><img src="logo-olimpo.png" alt="">Olimpo Spa</div>
-      <video id="video" playsinline preload="none" poster="img/video-poster.webp" src="img/video.mp4"></video>
+      <div class="who"><img src="logo-olimpo.webp?v=7428fe19" alt="" width="360" height="253">Olimpo Spa</div>
+      <video id="video" playsinline preload="none" poster="img/video-poster.webp?v=7428fe19" src="img/video.mp4?v=7428fe19"></video>
       <button type="button" class="play" id="play" aria-label="Reproducir video">▶</button>
     </div>
   </div>
@@ -584,14 +587,14 @@ section.sec{padding-top:72px}
   <div class="cta">
     <div><h2>¿Listo para sentirte mejor?</h2><p>Habla directamente con un asesor de Olimpo Spa y elige el ritual y el espacio que más te gusten. Sin llenar formularios ni esperar.</p>
       <a class="btn" data-wa="Hola, vengo de su sitio web, deseo agendar un masaje">Agenda tu masaje ↗</a></div>
-    <button type="button" class="pic" id="ctaPic" aria-label="Ampliar foto de la fachada"><img src="img/fachada.webp" alt="Fachada de Olimpo Spa, Carrera 77B #48B-41, con el timbre señalado" loading="lazy" style="object-position:35% 60%"></button>
+    <button type="button" class="pic" id="ctaPic" aria-label="Ampliar foto de la fachada"><img src="img/fachada.webp?v=7428fe19" alt="Fachada de Olimpo Spa, Carrera 77B #48B-41, con el timbre señalado" loading="lazy" style="object-position:35% 60%" width="1000" height="800"></button>
     <div class="mini">
       <iframe title="Mapa de ubicación de Olimpo Spa en Laureles" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn&amp;z=15&amp;output=embed"></iframe>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Carrera 77B #48B-41, Laureles, Medellín<span>↗</span></a>
     </div>
   </div>
   <footer class="foot">
-    <div><a class="logo" href="#top"><img src="logo-olimpo.png" alt="Olimpo"></a><p>Estamos en una de las zonas más convenientes de Medellín para visitantes y residentes. Escríbenos antes de llegar; nuestro equipo te orientará con discreción.</p></div>
+    <div><a class="logo" href="#top"><img src="logo-olimpo.webp?v=7428fe19" alt="Olimpo" width="360" height="253"></a><p>Estamos en una de las zonas más convenientes de Medellín para visitantes y residentes. Escríbenos antes de llegar; nuestro equipo te orientará con discreción.</p></div>
     <div><h4>Enlaces</h4><ul><li><a href="#espacios">Espacios</a></li><li><a href="#diosas">Nuestras diosas</a></li><li><a href="#masajes">Masajes</a></li></ul></div>
     <div><h4>Masajes</h4><ul><li><a href="#masajes">Olimpo</a></li><li><a href="#masajes">Spartacus y Gladiador</a></li><li><a href="#masajes">Fuego divino</a></li><li><a href="#masajes">4 y 6 manos</a></li></ul></div>
     <div><h4>Horarios y pagos</h4><ul><li>Lunes a sábado de 11 am a 7 pm</li><li>Domingos bajo reserva</li><li>Efectivo: pesos colombianos y dólares</li><li>Transferencia</li></ul></div>
@@ -603,7 +606,7 @@ section.sec{padding-top:72px}
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Foto ampliada"><img id="lbImg" alt=""><button type="button" class="x" id="lbX" aria-label="Cerrar">✕</button><button type="button" class="pv" id="lbPv" aria-label="Foto anterior">←</button><button type="button" class="nx" id="lbNx" aria-label="Foto siguiente">→</button><div class="cap"><span id="lbCap"></span><a class="btn" id="lbBook" target="_blank" rel="noopener" hidden>Reservar ↗</a></div></div>
 
 <div class="bot" id="bot" role="dialog" aria-label="Asistente virtual de Olimpo">
-  <header><img src="logo-olimpo.png" alt=""><div>Asistente virtual<small>Respuestas al instante</small></div><button type="button" id="botX" aria-label="Cerrar asistente">✕</button></header>
+  <header><img src="logo-olimpo.webp?v=7428fe19" alt="" width="360" height="253"><div>Asistente virtual<small>Respuestas al instante</small></div><button type="button" id="botX" aria-label="Cerrar asistente">✕</button></header>
   <div class="log" id="botLog" aria-live="polite"></div>
   <div class="opts" id="botOpts"></div>
   <form id="botForm"><input id="botIn" autocomplete="off" placeholder="Escribe tu mensaje…" aria-label="Escribe tu mensaje"><button type="submit" aria-label="Enviar">➤</button></form>
@@ -635,8 +638,8 @@ section.sec{padding-top:72px}
   // Terapeutas. Los nombres por foto son provisionales hasta que el spa los confirme.
   var team=[['Hera','masajista-3','60% 8%'],['Artemisa','masajista-1','45% 14%'],['Afrodita','masajista-5','55% 12%'],['Isis','masajista-2','95% 28%'],['Medusa','masajista-4','50% 5%']];
   $('team').innerHTML=team.map(function(t){
-    return '<button type="button" class="d-card" data-n="'+t[0]+'" aria-label="Ampliar foto de '+t[0]+'"><img src="img/'+t[1]+'.webp" alt="'+t[0]+', terapeuta de Olimpo" style="object-position:'+t[2]+'" loading="lazy"><span><b>'+t[0]+'</b>Ampliar foto ›</span></button>';
-  }).join('')+'<div class="d-card soon"><img src="logo-olimpo.png" alt=""><span><b>Atenea</b>Foto próximamente</span></div>';
+    return '<button type="button" class="d-card" data-n="'+t[0]+'" aria-label="'+t[0]+'. Ampliar foto"><img src="img/'+t[1]+'.webp?v=7428fe19" alt="'+t[0]+', terapeuta de Olimpo" style="object-position:'+t[2]+'" loading="lazy"><span><b>'+t[0]+'</b>Ampliar foto ›</span></button>';
+  }).join('')+'<div class="d-card soon"><img src="logo-olimpo.webp?v=7428fe19" alt="" width="360" height="253"><span><b>Atenea</b>Foto próximamente</span></div>';
 
   // Carrusel de espacios
   var tr=$('espTrack'),pv=$('espPv'),nx=$('espNx');
@@ -670,7 +673,7 @@ section.sec{padding-top:72px}
   var cards=[].slice.call(document.querySelectorAll('button.d-card'));
   var teamSet=cards.map(function(c){return{src:c.querySelector('img').getAttribute('src'),cap:c.dataset.n,name:c.dataset.n}});
   cards.forEach(function(c,i){c.addEventListener('click',function(){lbOpen(teamSet,i,c)})});
-  $('ctaPic').addEventListener('click',function(){lbOpen([{src:'img/fachada.webp',cap:'Fachada de Olimpo Spa · Carrera 77B #48B-41, cerca al Centro Comercial Obelisco y a la estación Floresta'}],0,this)});
+  $('ctaPic').addEventListener('click',function(){lbOpen([{src:'img/fachada.webp?v=7428fe19',cap:'Fachada de Olimpo Spa · Carrera 77B #48B-41, cerca al Centro Comercial Obelisco y a la estación Floresta'}],0,this)});
 
   // Asistente virtual con respuestas predefinidas
   var bot=$('bot'),log=$('botLog'),started=false;
