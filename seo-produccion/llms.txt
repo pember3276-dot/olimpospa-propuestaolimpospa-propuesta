@@ -36,3 +36,4 @@ Todos los masajes incluyen bebida de bienvenida y ducha al inicio y al final. La
 ## Páginas
 
 - [Inicio](https://olimpospa.com.co/): espacios del spa, equipo de terapeutas, masajes con valores, mapa y contacto.
+- [English version](https://olimpospa.com.co/en/): the same page in English.

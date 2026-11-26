@@ -624,9 +624,19 @@ section.sec{padding-top:72px}
 (function(){
   var $=function(id){return document.getElementById(id)};
   var WA='https://wa.me/573043635398?text=';
+  // Código de origen: ?ref=G1 o utm_source conocido. Se recuerda durante la visita.
+  var REF=(function(){var map={google:'G1',maps:'M1',skokka:'D1',mileroticos:'D2',photoprepagos:'D3',meta:'F1'},c='';
+    try{var q=new URLSearchParams(location.search),r=q.get('ref')||'',s=(q.get('utm_source')||'').toLowerCase();
+      c=/^[A-Za-z]\d{1,2}$/.test(r)?r.toUpperCase():(map[s]||(q.get('gclid')?'G1':''));
+      if(c)sessionStorage.setItem('olRef',c);else c=sessionStorage.getItem('olRef')||''}catch(e){}
+    return c})();
+  function waUrl(t){return WA+encodeURIComponent(t+(REF?' ('+REF+')':''))}
+  // Si GA4 está instalado, cuenta cada toque en WhatsApp como evento
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');
+    if(a&&window.gtag)gtag('event','whatsapp_click',{origen:REF||'directo'})});
   var MAPS='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('Carrera 77B #48B-41, Laureles, Medellín');
   // Todos los botones de WhatsApp llevan su mensaje listo
-  function wire(root){[].forEach.call(root.querySelectorAll('[data-wa]'),function(a){a.href=WA+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'})}
+  function wire(root){[].forEach.call(root.querySelectorAll('[data-wa]'),function(a){a.href=waUrl(a.dataset.wa);a.target='_blank';a.rel='noopener'})}
   wire(document);
 
   // Menú en celular
@@ -656,7 +666,7 @@ section.sec{padding-top:72px}
   var lb=$('lb'),lbImg=$('lbImg'),lbCap=$('lbCap'),lbBook=$('lbBook'),set=[],at=0,back=null;
   function lbShow(i){at=(i+set.length)%set.length;var o=set[at];lbImg.src=o.src;lbImg.alt=o.cap;lbCap.textContent=o.cap;
     $('lbPv').hidden=$('lbNx').hidden=set.length<2;
-    if(o.name){lbBook.hidden=false;lbBook.textContent='Reservar con '+o.name+' ↗';lbBook.href=WA+encodeURIComponent('Hola, vengo de su sitio web, deseo agendar un masaje con '+o.name)}else lbBook.hidden=true}
+    if(o.name){lbBook.hidden=false;lbBook.textContent='Reservar con '+o.name+' ↗';lbBook.href=waUrl('Hola, vengo de su sitio web, deseo agendar un masaje con '+o.name)}else lbBook.hidden=true}
   function lbOpen(list,i,el){set=list;back=el;lb.classList.add('on');document.body.style.overflow='hidden';lbShow(i);$('lbX').focus()}
   function lbClose(){lb.classList.remove('on');document.body.style.overflow='';lbImg.removeAttribute('src');if(back)back.focus()}
   $('lbX').addEventListener('click',lbClose);

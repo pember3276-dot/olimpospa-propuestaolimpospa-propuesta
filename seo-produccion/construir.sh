@@ -91,6 +91,20 @@ s=re.sub(r'((?:img/[\w.-]+|logo-olimpo)\.(?:webp|mp4))(?=["\')])',lambda m:m.gro
 x="""'.webp" alt="'"""; assert x in s
 s=s.replace(x,"""'.webp?v=%s" srcset="img/'+t[1]+'-s.webp?v=%s 420w, img/'+t[1]+'.webp?v=%s 720w" sizes="%s" alt="'"""%(v,v,v,SIZES['m']))
 s=s.replace('https://olimpospa.com.co/logo-olimpo.png','https://olimpospa.com.co/logo-olimpo.webp')
+# Selector de idioma y etiquetas hreflang; versión en inglés en /en/
+HL='<link rel="alternate" hreflang="es" href="https://olimpospa.com.co/">\n<link rel="alternate" hreflang="en" href="https://olimpospa.com.co/en/">\n<link rel="alternate" hreflang="x-default" href="https://olimpospa.com.co/">\n'
+c='<link rel="canonical" href="https://olimpospa.com.co/">\n'; assert s.count(c)==1; s=s.replace(c,c+HL)
+s=s.replace('</style>','.lang a{color:inherit;text-decoration:none;display:inline-block;padding:10px 6px}\n</style>',1)
+L='<span class="lang"><b>ES</b> · EN</span>'; assert s.count(L)==1
+M='<a href="#masajes">Masajes y valores</a>\n'; assert s.count(M)==1
+sys.path.insert(0,'seo-produccion'); import en
+e=en.traducir(s)
+s=s.replace(L,'<span class="lang"><b>ES</b> · <a href="/en/" hreflang="en" lang="en">EN</a></span>').replace(M,M+'  <a href="/en/" hreflang="en" lang="en">English</a>\n')
+e=e.replace(L,'<span class="lang"><a href="/" hreflang="es" lang="es">ES</a> · <b>EN</b></span>')
+M2='<a href="#masajes">Massages and prices</a>\n'; assert e.count(M2)==1
+e=e.replace(M2,M2+'  <a href="/" hreflang="es" lang="es">Español</a>\n')
+os.makedirs(D+'/en',exist_ok=True)
+open(D+'/en/index.html','w',encoding='utf-8').write(e)
 open(D+'/index.html','w',encoding='utf-8').write(s)
 print('version',v)
 PY
