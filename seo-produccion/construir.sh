@@ -54,10 +54,18 @@ s,n=re.subn(r'<!-- SEO: esta maqueta.*?-->\n<meta name="robots" content="noindex
 assert '../' not in s
 # Fuentes propias (sin conexiones a Google), solo con los caracteres que usa el sitio
 m=re.search(r'<link rel="stylesheet" href="(https://fonts\.googleapis\.com/css2[^"]*)">',s); assert m
-s=s.replace(m.group(0),'<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-s.webp?v=%s 900w, img/hero.webp?v=%s 1500w" imagesizes="100vw" fetchpriority="high">'%(v,v))
+s=s.replace(m.group(0),'<link rel="preload" as="image" href="img/hero.webp" imagesrcset="img/hero-s.webp?v=%s 900w, img/hero.webp?v=%s 1500w" imagesizes="100vw" fetchpriority="high">\n<link rel="preload" as="font" type="font/woff2" href="fuentes/geist.woff2?v=%s" crossorigin>\n<link rel="preload" as="font" type="font/woff2" href="fuentes/opensans.woff2?v=%s" crossorigin>'%(v,v,v,v))
 s,n=re.subn(r'<link rel="preconnect" href="https://fonts\.g[^>]*>\n?','',s); assert n==2
 ff=''.join('@font-face{font-family:"%s";font-style:normal;font-weight:%s;font-display:swap;src:url(fuentes/%s.woff2?v=%s) format("woff2")}'%(a,b,c,v) for a,b,c in [('Geist','500 700','geist'),('Lora','500 700','lora'),('Open Sans','400 600','opensans')])
 s=s.replace('<style>','<style>\n'+ff,1); assert 'fonts.g' not in s
+# Fuentes de reserva con el mismo ancho, para que el texto no se mueva al cargar las definitivas
+SA,SB='local("Arial"),local("Liberation Sans"),local("Arimo")','local("Arial Bold"),local("Liberation Sans Bold"),local("Arimo Bold"),local("Arial")'
+TA,TB='local("Times New Roman"),local("Liberation Serif"),local("Tinos")','local("Times New Roman Bold"),local("Liberation Serif Bold"),local("Tinos Bold"),local("Times New Roman")'
+fb=''.join('@font-face{font-family:"%s";font-weight:%s;src:%s;size-adjust:%s%%}'%x for x in [('Geist FB','400 500',SA,'103.8'),('Geist FB','600 700',SB,'99.0'),('OpenSans FB','400 500',SA,'103.8'),('OpenSans FB','600 700',SB,'100.5'),('Lora FB','400 500',TA,'115.9'),('Lora FB','600 700',TB,'110.5')])
+s=s.replace(ff,ff+fb,1)
+for a_,b_ in [('--head:"Geist",','--head:"Geist","Geist FB",'),('--serif:"Lora",','--serif:"Lora","Lora FB",'),('--body:"Open Sans",','--body:"Open Sans","OpenSans FB",')]:
+    assert s.count(a_)==1; s=s.replace(a_,b_)
+a_='line-height:1.04;max-width:13ch}'; assert s.count(a_)==1; s=s.replace(a_,'line-height:1.04;max-width:8.98em}')
 # Dimensiones en las imágenes, prioridad para la portada
 def tag(mm):
     t=mm.group(0); src=mm.group(1)
