@@ -91,6 +91,12 @@ s=re.sub(r'((?:img/[\w.-]+|logo-olimpo)\.(?:webp|mp4))(?=["\')])',lambda m:m.gro
 x="""'.webp" alt="'"""; assert x in s
 s=s.replace(x,"""'.webp?v=%s" srcset="img/'+t[1]+'-s.webp?v=%s 420w, img/'+t[1]+'.webp?v=%s 720w" sizes="%s" alt="'"""%(v,v,v,SIZES['m']))
 s=s.replace('https://olimpospa.com.co/logo-olimpo.png','https://olimpospa.com.co/logo-olimpo.webp')
+# Google Analytics 4 con carga diferida (al primer gesto del visitante o a los 7 s), para no frenar la página.
+# El ID de medición va en seo-produccion/ga4.txt (una línea, G-XXXXXXXXXX). Sin ese archivo no se instala.
+if os.path.exists('seo-produccion/ga4.txt'):
+    gid=open('seo-produccion/ga4.txt').read().strip(); assert re.fullmatch(r'G-[A-Z0-9]{6,14}',gid),gid
+    ga="<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','%s');(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=%s';document.head.appendChild(s)}['pointerdown','keydown','scroll','touchstart'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});setTimeout(l,7000)})();</script>\n"%(gid,gid)
+    assert s.count('</head>')==1; s=s.replace('</head>',ga+'</head>')
 # Selector de idioma y etiquetas hreflang; versión en inglés en /en/
 HL='<link rel="alternate" hreflang="es" href="https://olimpospa.com.co/">\n<link rel="alternate" hreflang="en" href="https://olimpospa.com.co/en/">\n<link rel="alternate" hreflang="x-default" href="https://olimpospa.com.co/">\n'
 c='<link rel="canonical" href="https://olimpospa.com.co/">\n'; assert s.count(c)==1; s=s.replace(c,c+HL)
