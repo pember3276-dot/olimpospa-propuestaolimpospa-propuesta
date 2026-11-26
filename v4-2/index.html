@@ -727,7 +727,7 @@ section.sec{padding-top:72px}
   m.addEventListener('click',function(e){if(e.target.tagName==='A')setOpen(false)});
 
   // Terapeutas. Los nombres por foto son provisionales hasta que el spa los confirme.
-  var team=[['Hera','diosa-1','50% 8%'],['Artemisa','diosa-2','60% 22%'],['Afrodita','diosa-3','30% 6%'],['Isis','diosa-4','40% 10%'],['Medusa','diosa-5','55% 6%']];
+  var team=[['Hera','masajista-1','45% 14%'],['Artemisa','masajista-2','95% 28%'],['Afrodita','masajista-3','60% 8%'],['Isis','masajista-4','50% 5%'],['Medusa','masajista-5','55% 12%']];
   $('team').innerHTML=team.map(function(t){
     return '<button type="button" class="d-card" data-n="'+t[0]+'" aria-label="Ampliar foto de '+t[0]+'"><img src="img/'+t[1]+'.webp" alt="'+t[0]+', terapeuta de Olimpo" style="object-position:'+t[2]+'" loading="lazy"><span><b>'+t[0]+'</b>Ampliar foto ›</span></button>';
   }).join('')+'<div class="d-card soon"><img src="../logo-olimpo.png" alt=""><span><b>Atenea</b>Foto próximamente</span></div>';
