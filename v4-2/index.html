@@ -678,7 +678,7 @@ section.sec{padding-top:72px}
   <div class="cta">
     <div><h2>¿Listo para sentirte mejor?</h2><p>Habla directamente con un asesor de Olimpo Spa y elige el ritual y el espacio que más te gusten. Sin llenar formularios ni esperar.</p>
       <a class="btn" data-wa="Hola, quiero agendar un masaje en Olimpo Spa">Agenda tu masaje ↗</a></div>
-    <button type="button" class="pic" id="ctaPic" aria-label="Ampliar foto del spa"><img src="img/pasillo.webp" alt="Interior de Olimpo Spa" loading="lazy"></button>
+    <button type="button" class="pic" id="ctaPic" aria-label="Ampliar foto de la fachada"><img src="img/fachada.webp" alt="Fachada de Olimpo Spa, Carrera 77B #48B-41, con el timbre señalado" loading="lazy" style="object-position:35% 60%"></button>
     <div class="mini">
       <iframe title="Mapa de ubicación de Olimpo Spa en Laureles" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn&amp;z=15&amp;output=embed"></iframe>
       <a href="https://www.google.com/maps/search/?api=1&amp;query=Carrera%2077B%20%2348B-41%2C%20Laureles%2C%20Medell%C3%ADn" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Carrera 77B #48B-41, Laureles, Medellín<span>↗</span></a>
@@ -689,7 +689,7 @@ section.sec{padding-top:72px}
     <div><h4>Enlaces</h4><ul><li><a href="#espacios">Espacios</a></li><li><a href="#diosas">Nuestras diosas</a></li><li><a href="#masajes">Masajes</a></li></ul></div>
     <div><h4>Masajes</h4><ul><li><a href="#masajes">Olimpo</a></li><li><a href="#masajes">Spartacus y Gladiador</a></li><li><a href="#masajes">Fuego divino</a></li><li><a href="#masajes">4 y 6 manos</a></li></ul></div>
     <div><h4>Horarios y pagos</h4><ul><li>Lunes a sábado de 11 am a 7 pm</li><li>Domingos bajo reserva</li><li>Efectivo: pesos colombianos y dólares</li><li>Transferencia</li></ul></div>
-    <div><h4>Contacto</h4><ul><li>Carrera 77B #48B-41, Laureles</li><li><a href="https://wa.me/573012295396" target="_blank" rel="noopener">+57 301 229 5396</a></li><li><a href="https://www.instagram.com/olimpospamassage" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@olimpospa_" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+    <div><h4>Contacto</h4><ul><li>Carrera 77B #48B-41, Laureles</li><li>Cerca al C.C. Obelisco y a la estación Floresta</li><li><a href="https://wa.me/573012295396" target="_blank" rel="noopener">+57 301 229 5396</a></li><li><a href="https://www.instagram.com/olimpospamassage" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@olimpospa_" target="_blank" rel="noopener">TikTok</a></li></ul></div>
   </footer>
   <div class="foot-base"><span>© 2026 Olimpo Spa Medellín</span><span>Privacidad · Términos</span></div>
 </div></div>
@@ -764,7 +764,7 @@ section.sec{padding-top:72px}
   var cards=[].slice.call(document.querySelectorAll('button.d-card'));
   var teamSet=cards.map(function(c){return{src:c.querySelector('img').getAttribute('src'),cap:c.dataset.n,name:c.dataset.n}});
   cards.forEach(function(c,i){c.addEventListener('click',function(){lbOpen(teamSet,i,c)})});
-  $('ctaPic').addEventListener('click',function(){lbOpen([{src:'img/pasillo.webp',cap:'Interior de Olimpo Spa'}],0,this)});
+  $('ctaPic').addEventListener('click',function(){lbOpen([{src:'img/fachada.webp',cap:'Fachada de Olimpo Spa · Carrera 77B #48B-41, cerca al Centro Comercial Obelisco y a la estación Floresta'}],0,this)});
 
   // Asistente virtual con respuestas predefinidas
   var bot=$('bot'),log=$('botLog'),started=false;
