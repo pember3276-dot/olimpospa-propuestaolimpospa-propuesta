@@ -94,8 +94,10 @@ s=s.replace('https://olimpospa.com.co/logo-olimpo.png','https://olimpospa.com.co
 # Google Analytics 4 con carga diferida (al primer gesto del visitante o a los 7 s), para no frenar la página.
 # El ID de medición va en seo-produccion/ga4.txt (una línea, G-XXXXXXXXXX). Sin ese archivo no se instala.
 if os.path.exists('seo-produccion/ga4.txt'):
-    gid=open('seo-produccion/ga4.txt').read().strip(); assert re.fullmatch(r'G-[A-Z0-9]{6,14}',gid),gid
-    ga="<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','%s');(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=%s';document.head.appendChild(s)}['pointerdown','keydown','scroll','touchstart'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});setTimeout(l,7000)})();</script>\n"%(gid,gid)
+    gid=open('seo-produccion/ga4.txt').read().strip(); assert re.fullmatch(r'(G|GTM)-[A-Z0-9]{6,14}',gid),gid
+    # La etiqueta de Google nueva viene como contenedor GTM-…: se carga gtm.js y no lleva "config"
+    src,cfg=('gtm.js','') if gid.startswith('GTM-') else ('gtag/js',"gtag('config','%s');"%gid)
+    ga="<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());%s(function(){var d=0;function l(){if(d)return;d=1;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/%s?id=%s';document.head.appendChild(s)}['pointerdown','keydown','scroll','touchstart'].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});setTimeout(l,7000)})();</script>\n"%(cfg,src,gid)
     assert s.count('</head>')==1; s=s.replace('</head>',ga+'</head>')
 # Selector de idioma y etiquetas hreflang; versión en inglés en /en/
 HL='<link rel="alternate" hreflang="es" href="https://olimpospa.com.co/">\n<link rel="alternate" hreflang="en" href="https://olimpospa.com.co/en/">\n<link rel="alternate" hreflang="x-default" href="https://olimpospa.com.co/">\n'
